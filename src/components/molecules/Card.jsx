@@ -5,8 +5,10 @@ import Receta from '../../assets/image/card_image_1.jpg';
 const CardContainer = styled.div`
   display: grid;
   margin-left: 10%;
-  gap: 25px;
+  gap: 40px;
   padding: 25px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   grid-template-columns: 1fr;
 
   @media screen and (min-width: 768px) {

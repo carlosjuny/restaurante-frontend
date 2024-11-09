@@ -18,7 +18,6 @@ const StyleHeader = styled.div`
 const Header = () => {
   const location = useLocation();
   
-  // Determine the background image based on the current route
   const backgroundImage = location.pathname === '/menu' ? MenuBanner : Slide;
 
   return (

@@ -29,7 +29,6 @@ const ButtonNav =styled.button`
 
 }
 
-
 `
 
 const ButtonNavegation = ({ children, onClick }) => {

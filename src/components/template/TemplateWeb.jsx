@@ -7,20 +7,42 @@ import Section3 from '../molecules/Section3'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BarraNav from '../atoms/BarraNav'
 import BackToTop from '../atoms/BackToTop'
-import SliderPromo from '../molecules/SliderPromo'
+import SliderPromotion from '../molecules/SliderPromotion'
 import Input from '../atoms/Input'
+import styled from 'styled-components'
+
+
+const Title = styled.h1`
+      position: absolute;
+      right: 42%;
+      font-size: 35px;
+      top: 420px;
+      z-index: 2;
+      color: #E9D282;
+
+  @media (min-width: 768px) {
+    right: 45%;
+  }
+
+  @media (min-width: 1024px) {
+    right: 5%;
+    font-size: 50px;;
+    top: 420px;
+  }
+`;
 
 const TemplateWeb = () => {
   return (
     <>
     <BarraNav/>
+    <Title>Inicio</Title>
     <Header/>
     <Input />
     <Section1/>
     <Section2/>
     <Section3/>
     <BackToTop/>
-    <SliderPromo />
+    <SliderPromotion />
     <Footer/>
     </>
   )

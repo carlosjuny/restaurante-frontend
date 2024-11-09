@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaPhone } from "react-icons/fa6";
 
-
 const BarraNavb =styled.div`
     width: 100%;
     height: 2.5rem;
@@ -16,23 +15,22 @@ const BarraNavb =styled.div`
     }
 
     .phone {
-        position: relative;
-        left: 68%;
-        top: 0.4rem;
+        position: absolute;
+        right: 26%;
+        top: 0.8rem;
     }
 
 @media (min-width: 768px){
   .phone {
-    left: 79%;
+    right: 17%;
   }
 }
 @media (min-width: 1024px){
   .phone {
-    left: 83%;
+    right: 12%;
   }
 }
 `
-
 
 const BarraNav = () => {
   return (

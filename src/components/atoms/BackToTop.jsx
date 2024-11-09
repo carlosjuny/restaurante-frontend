@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 const waveAnimation = keyframes`
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 0 rgba(51, 51, 51, 0.692);
   }
   100% {
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
@@ -19,7 +19,7 @@ const BackTop = styled.div`
   bottom: 20px;
   right: 20px;
   display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
-  background-color: #000;
+  background-color: #32312C;
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -52,7 +52,7 @@ const BackTop = styled.div`
     right: -2px;
     bottom: -2px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(51, 51, 51, 0.493);
     animation: ${waveAnimation} 1.5s infinite;
   }
 `;

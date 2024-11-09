@@ -217,9 +217,9 @@ const Navbar = () => {
         <MdDeliveryDining className='shopping'/>
         <Link to='/' className='navLink'>{''}<img src={Logo} /></Link>
             <ul className={active}>
-                <li className='navItem'><Link to='sobrenosotros' className='navLink'>Sobre nostros</Link>{''}</li>
-                <li className='navItem'><Link to='menu' className='navLink'>Menú</Link>{''}</li>
-                <li className='navItem'><Link to='promotions' className='navLink'>Promociones</Link>{''}</li>
+                <li className='navItem'><Link to='/sobrenosotros' className='navLink'>Sobre nostros</Link>{''}</li>
+                <li className='navItem'><Link to='/menu' className='navLink'>Menú</Link>{''}</li>
+                <li className='navItem'><Link to='/promotions' className='navLink'>Promociones</Link>{''}</li>
                 <li className='navItem'><Link to='/contact' className='navLink'>Contacto</Link>{''}</li>
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
