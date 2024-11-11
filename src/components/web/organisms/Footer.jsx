@@ -6,6 +6,7 @@ import { CiFacebook } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import footer from '../../../assets/image/footer_5.jpg'
 import { Link } from 'react-router-dom'
+import BackToTop from '../atoms/BackToTop'
 
 const FooterStyle =styled.div`
   position: relative;
@@ -96,6 +97,7 @@ const FooterStyle =styled.div`
 const Footer = () => {
   return (
     <FooterStyle>
+      <BackToTop/>
       <img src={img1}/>
       <div className='networks'>
         <h2>Redes sociales</h2>

@@ -15,12 +15,14 @@ const CardContainer = styled.div`
   grid-template-columns: 1fr;
   box-shadow: 1px 4px 4px 1px rgba(56, 56, 56, 0.25), 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
   @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(303px, 1fr));
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
     margin-left: 10%;
   }
 
   @media (min-width: 1024px) {
-    margin-left: 2%;
+    grid-template-columns: repeat(auto-fill, minmax(303px, 1fr));
+    margin-left: 2.5%;
     width: 95%;
   }
 `;
@@ -35,26 +37,28 @@ const CardStyle = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+  margin: auto;
   justify-content: center;
   flex-direction: column;
   border-radius: 5px;
+  font-size: 28px;
 
   img {
     width: 95%;
-    margin-bottom: 115px;
-    height: auto;
+    margin-bottom: 117px;
     border-radius: 5px;
-
-    @media (min-width: 1024px) {
-      margin-bottom: 85px;  
-    }
   }
 
-  h3{
-    @media (min-width: 1024px) {
+  h3 {
+    font-size: 24px;
+  }
+  @media (min-width: 1024px) {
+
+    h3{
         font-size: 22px;
     }
-  }
+    }
+
 
   &:hover .overlay {
     opacity: 1;

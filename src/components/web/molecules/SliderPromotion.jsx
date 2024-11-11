@@ -14,16 +14,21 @@ const SliderContainer = styled.div`
   height: 60vh;
   position: relative;
   overflow: hidden;
+  background-color: #c1c1c1;
 `;
 
 const Slide = styled.div`
+  height: 100%;
   display: flex;
   transition: transform 0.5s ease;
 `;
 
 const Image = styled.img`
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
   width: ${({ isCenter }) => (isCenter ? '500px' : '300px')};
-  height: 70%;
+  height: 100%;
   opacity: ${({ isCenter }) => (isCenter ? 1 : 0.5)};
   transform: ${({ isLeft, isRight }) =>
     isLeft ? 'translateX(120%) scale(0.8)' : isRight ? 'translateX(-120%) scale(0.8)' : 'scale(1)'};

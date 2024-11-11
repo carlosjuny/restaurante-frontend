@@ -22,7 +22,7 @@ const ButtonStyle =styled.button`
 
     p {
         margin-left: 0.5rem;
-        margin-top: 1.2rem;
+        margin-top: 0.2rem;
     }
 
     &:hover {

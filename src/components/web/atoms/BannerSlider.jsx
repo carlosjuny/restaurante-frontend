@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Slide1 from '../../../assets/image/slider_image_1.jpg';
-import Slide2 from '../../../assets/image/slider_image_2.jpg';
 import ButtonNavegation from './ButtonNavegation';
 
 const BannerStyle = styled.div`
@@ -9,10 +7,9 @@ const BannerStyle = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  margin-top: -111px;
+  margin-top: -118px;
 
   @media (min-width: 1024px) {
-    margin-top: -127px;
   }
 
   .slide {
@@ -21,27 +18,41 @@ const BannerStyle = styled.div`
     height: 100vh;
     transition: opacity 0.5s ease;
     opacity: 0;
-  }
 
-  .active {
-    opacity: 1;
+    &.active {
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
   }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: relative;
+    z-index: 0;
   }
 
   .controls {
     position: relative;
+    z-index: 2;
     top: 54%;
     left: 45%;
     transform: translateX(-43%);
     display: flex;
     gap: 10px;
 
-    @media (min-width: 1024px){
+    @media (min-width: 1024px) {
       left: 44%;
       top: 50%;
     }
@@ -55,6 +66,7 @@ const BannerStyle = styled.div`
     cursor: pointer;
     border-radius: 2px;
     font-size: 22px;
+    z-index: 2;
   }
 
   .prev {
@@ -75,9 +87,7 @@ const BannerStyle = styled.div`
   }
 `;
 
-const images = [Slide1, Slide2];
-
-const BannerSlider = () => {
+const BannerSlider = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -93,7 +103,7 @@ const BannerSlider = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images]);
 
   return (
     <BannerStyle>
@@ -106,8 +116,8 @@ const BannerSlider = () => {
         </div>
       ))}
       <div className="controls">
-        <button className='next' onClick={prevSlide}>❮</button>
-        <button className='prev' onClick={nextSlide}>❯</button>
+        <button className="next" onClick={prevSlide}>❮</button>
+        <button className="prev" onClick={nextSlide}>❯</button>
       </div>
       <ButtonNavegation>Ver nuestro menú</ButtonNavegation>
     </BannerStyle>

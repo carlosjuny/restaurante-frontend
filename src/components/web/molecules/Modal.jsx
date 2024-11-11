@@ -28,11 +28,18 @@ const ModalContent = styled.div`
     overflow: hidden;
     
     .TitleLogin {
-      margin-top: -12px;
+      margin-top: 5px;
     }
 
     .TitleRegister {
       margin-top: -6px;
+    }
+
+    a {
+      color: #F4D976;
+      border: 1px solid #32312C;
+      background-color: #32312C;
+      border-radius: 3px;
     }
 
     .web {
@@ -45,7 +52,7 @@ const ModalContent = styled.div`
     .web img {
       width: 45px;
       left: 0;
-      top: -3px;
+      top: 2px;
     }
 
     .web1, .web2, .web3 {
@@ -91,9 +98,12 @@ const SubmitButton = styled.button`
 `;
 
 const CloseButton = styled.button`
+    width: 25px;
+    height: 30px;
     position: absolute;
     top: 10px;
     right: 10px;
+    line-height: 33px;
     background: transparent;
     border: none;
     font-size: 1.5rem;
@@ -101,6 +111,13 @@ const CloseButton = styled.button`
     z-index: 3;
     color: #fff;
     background-color: #000000b0;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #333;
+      font-weight: 700;
+      transition: 0.5s ease;
+    }
 `;
 
 const ImageContainer = styled.div`
