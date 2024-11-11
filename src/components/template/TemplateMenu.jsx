@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../organisms/Header'
-import Footer from '../organisms/Footer'
+import Header from '../web/organisms/Header'
+import Footer from '../web/organisms/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import BarraNav from '../atoms/BarraNav'
-import BackToTop from '../atoms/BackToTop'
-import Card from '../molecules/Card'
-import ButtonSelect from '../atoms/ButtonSelect'
+import BarraNav from '../web/atoms/BarraNav'
+import BackToTop from '../web/atoms/BackToTop'
+import Card from '../web/molecules/Card'
+import ButtonSelect from '../web/atoms/ButtonSelect'
 import styled from 'styled-components'
 
 const Title = styled.h1`

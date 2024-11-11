@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import Logo from '../../assets/image/logo_ladicha_bl.png'
+import Logo from '../../../assets/image/logo_ladicha_bl.png'
 import { MdDeliveryDining } from "react-icons/md"
 import { FaUser } from "react-icons/fa"
 import Button from '../atoms/button'
-import ButtonNav from '../atoms/ButtonNavegation'
 import Modal from './Modal'
 import { Link } from 'react-router-dom'
-import TemplateWeb from '../template/TemplateWeb'
 
 
 const Nav =styled.nav`
@@ -219,8 +217,8 @@ const Navbar = () => {
             <ul className={active}>
                 <li className='navItem'><Link to='/sobrenosotros' className='navLink'>Sobre nostros</Link>{''}</li>
                 <li className='navItem'><Link to='/menu' className='navLink'>Menú</Link>{''}</li>
-                <li className='navItem'><Link to='/promotions' className='navLink'>Promociones</Link>{''}</li>
-                <li className='navItem'><Link to='/contact' className='navLink'>Contacto</Link>{''}</li>
+                <li className='navItem'><Link to='/promociones' className='navLink'>Promociones</Link>{''}</li>
+                <li className='navItem'><Link to='/contacto' className='navLink'>Contacto</Link>{''}</li>
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className='line1'></div>
@@ -238,7 +236,6 @@ const Navbar = () => {
                     Inicia sesión para disfrutar nuestros descuentos
                 </Tooltip>
             </ButtonContainer>
-        <ButtonNav />
         {isModalOpen && <Modal onClose={closeModal} />}
     </Nav>
   )

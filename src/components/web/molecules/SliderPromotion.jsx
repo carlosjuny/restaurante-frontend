@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import img1 from '../../assets/image/slider_image_1.jpg';
-import img2 from '../../assets/image/slider_image_2.jpg';
-import img3 from '../../assets/image/slider_image_3.png';
+import img1 from '../../../assets/image/slider_image_1.jpg';
+import img2 from '../../../assets/image/slider_image_2.jpg';
+import img3 from '../../../assets/image/slider_image_3.png';
 
 const images = [img1, img2, img3];
 

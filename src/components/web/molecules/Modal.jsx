@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import chef from '../../assets/image/login_modal.jpg'
-import ImgGoogle from '../../assets/image/login_icon_google_plus.png'
+import chef from '../../../assets/image/login_modal.jpg'
+import ImgGoogle from '../../../assets/image/login_icon_google_plus.png'
 
 const ModalStyle =styled.div`
     width: 100%;

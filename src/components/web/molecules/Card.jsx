@@ -1,41 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
-import Receta from '../../assets/image/card_image_1.jpg';
+import Receta from '../../../assets/image/card_image_1.jpg';
 
 const CardContainer = styled.div`
   display: grid;
-  margin-left: 10%;
+  width: 60%;
+  margin-left: 17%;
   gap: 40px;
   padding: 25px;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 60px;
+  margin-bottom: 30px;
+  border-radius: 5px;
   grid-template-columns: 1fr;
-
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(403px, 1fr));
-    margin-left: 3%;
+  box-shadow: 1px 4px 4px 1px rgba(56, 56, 56, 0.25), 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(303px, 1fr));
+    margin-left: 10%;
   }
 
+  @media (min-width: 1024px) {
+    margin-left: 2%;
+    width: 95%;
+  }
 `;
 
 const CardStyle = styled.div`
   position: relative;
   box-sizing: border-box;
-  width: 403px;
-  height: 461px;
+  width: 303px;
+  height: 361px;
   background: #fdfdfd;
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(56, 56, 56, 0.25),  1px 0px 3px 2px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 5px;
 
   img {
     width: 95%;
-    margin-bottom: 145px;
+    margin-bottom: 115px;
     height: auto;
+    border-radius: 5px;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 85px;  
+    }
+  }
+
+  h3{
+    @media (min-width: 1024px) {
+        font-size: 22px;
+    }
   }
 
   &:hover .overlay {
@@ -61,6 +79,7 @@ const Overlay = styled.div`
     color: #fff;
     font-size: 1.5rem;
     margin-bottom: 15px;
+
   }
 
   button {
@@ -82,7 +101,7 @@ const Overlay = styled.div`
 const Card = () => {
   return (
     <CardContainer>
-      {[...Array(6)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <CardStyle key={i}>
           <img src={Receta} alt="Receta" />
           <h3>Carne, papas y ensalada</h3>

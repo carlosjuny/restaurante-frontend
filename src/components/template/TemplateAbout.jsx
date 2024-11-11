@@ -1,10 +1,11 @@
 import React from 'react'
-import Header from '../organisms/Header'
-import Footer from '../organisms/Footer'
+import Header from '../web/organisms/Header'
+import Footer from '../web/organisms/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import BarraNav from '../atoms/BarraNav'
-import BackToTop from '../atoms/BackToTop'
+import BarraNav from '../web/atoms/BarraNav'
+import BackToTop from '../web/atoms/BackToTop'
 import styled from 'styled-components'
+import AboutSection_1 from '../web/molecules/AboutSection_1'
 
 const Title = styled.h1`
       position: absolute;
@@ -31,6 +32,7 @@ const TemplateAbout = () => {
     <BarraNav/>
     <Title>Sobre nosotros</Title>
     <Header/>
+    <AboutSection_1 />
     <BackToTop/>
     <Footer/>
     </>

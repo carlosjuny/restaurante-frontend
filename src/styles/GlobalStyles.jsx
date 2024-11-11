@@ -64,6 +64,5 @@ a{
       
     }
   }
-
 `
 export default GlobalStyles;

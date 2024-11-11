@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import img1 from '../../assets/image/logo_ladicha_bl.png'
+import img1 from '../../../assets/image/logo_ladicha_bl.png'
 import { FaWhatsapp } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
-import footer from '../../assets/image/footer_5.jpg'
+import footer from '../../../assets/image/footer_5.jpg'
 import { Link } from 'react-router-dom'
 
 const FooterStyle =styled.div`
@@ -18,7 +18,7 @@ const FooterStyle =styled.div`
   background-repeat: no-repeat;
 
   @media (min-width: 1024px) {
-    height: 60vh;
+    /* height: 60vh; */
   }
 
   &::before {

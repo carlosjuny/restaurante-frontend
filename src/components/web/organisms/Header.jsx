@@ -2,9 +2,9 @@ import React from 'react';
 import Navbar from '../molecules/Navbar';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
-import Slide from '../../assets/image/slider_image_1.jpg';
-import MenuBanner from '../../assets/image/slider_image_2.jpg';
-import Banner from '../atoms/Banner';
+import Slide from '../../../assets/image/slider_image_1.jpg';
+import MenuBanner from '../../../assets/image/slider_image_2.jpg';
+import BannerSlider from '../atoms/BannerSlider';
 
 const StyleHeader = styled.div`
   /* width: 100%;
@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <StyleHeader bgImage={backgroundImage}>
       <Navbar />
-      <Banner />
+      <BannerSlider />
     </StyleHeader>
   );
 };

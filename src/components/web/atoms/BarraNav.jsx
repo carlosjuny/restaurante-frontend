@@ -5,7 +5,7 @@ import { FaPhone } from "react-icons/fa6";
 const BarraNavb =styled.div`
     width: 100%;
     height: 2.5rem;
-    background-color: #E9D282;
+    background-color: #F4D976;
 
     .num {
         position: relative;

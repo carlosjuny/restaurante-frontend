@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Slide1 from '../../assets/image/slider_image_1.jpg';
-import Slide2 from '../../assets/image/slider_image_2.jpg';
+import Slide1 from '../../../assets/image/slider_image_1.jpg';
+import Slide2 from '../../../assets/image/slider_image_2.jpg';
+import ButtonNavegation from './ButtonNavegation';
 
 const BannerStyle = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  margin-top: -157px;
+  margin-top: -111px;
+
+  @media (min-width: 1024px) {
+    margin-top: -127px;
+  }
 
   .slide {
     position: absolute;
@@ -29,42 +34,50 @@ const BannerStyle = styled.div`
   }
 
   .controls {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    top: 54%;
+    left: 45%;
+    transform: translateX(-43%);
     display: flex;
     gap: 10px;
+
+    @media (min-width: 1024px){
+      left: 44%;
+      top: 50%;
+    }
   }
 
   button {
     width: 40px;
     height: 40px;
-    background-color: #ffffff88;
-    color: #000;
+    background-color: #4747476f;
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 2px;
     font-size: 22px;
   }
 
   .prev {
-    right: 20px;
+    position: absolute;
+    right: 25px;
+    color: #ffffff;
   }
 
   .next {
-    left: -20px;
+    left: -25px;
+    color: #ffffff;
   }
 
-  @media (min-width: 1024px) {
-    margin-top: -173px;
+  .next:hover, .prev:hover {
+    background-color: #F4D976;
+    color: #32312C;
+    transition: 0.5s ease;
   }
-
 `;
 
-const images = [Slide1, Slide2]; // Agregar imágenes
+const images = [Slide1, Slide2];
 
-const Banner = () => {
+const BannerSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -96,8 +109,9 @@ const Banner = () => {
         <button className='next' onClick={prevSlide}>❮</button>
         <button className='prev' onClick={nextSlide}>❯</button>
       </div>
+      <ButtonNavegation>Ver nuestro menú</ButtonNavegation>
     </BannerStyle>
   );
 };
 
-export default React.memo(Banner);
+export default React.memo(BannerSlider);

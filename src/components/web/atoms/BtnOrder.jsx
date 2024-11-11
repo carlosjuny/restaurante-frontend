@@ -2,16 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ButtonOrder = styled.button`
-    width: 6.5rem;
-    height: 2.5rem;
     display: flex;
-    position: relative;
-    top: -5rem;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 2.9rem;
+    bottom: 6rem;
     cursor: pointer;
     border-radius: 0.2rem;
-    background-color: #E9D282;
+    background-color: #F4D976;
     color: #32312C;
-    justify-content: center;
+    font-weight: 600;
     z-index: 5;
     
     p {
@@ -20,25 +22,28 @@ const ButtonOrder = styled.button`
 
     &:hover {
         transition: 0.4s;
-        background-color: #32312C;
+        background-color: #757575;
         color: #ffffff;
     }
 
 @media screen and (min-width: 768px){
-    top: 7rem;
-    left: 6.5rem;
+    right: 22%;
 }
 
 @media screen and (min-width: 1024px){
-    left: 7.5rem;
+    right: 23%;
+    bottom: 10rem;
 }
 
+@media screen and (min-width: 1440px){
+    right: 27%;
+}
 `
 
 const BtnOrder = ({ children, onClick }) => {
   return (
     <ButtonOrder onClick={onClick}>
-    {children}<p>Aquí</p>
+    {children}
     </ButtonOrder>
   )
 }
