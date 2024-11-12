@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import MenuPage from './pages/MenuPage'
 import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,7 +14,7 @@ function App() {
         <Route index element={<HomePage/>} />
         <Route path='menu' element={<MenuPage/>} />
         <Route path='sobrenosotros' element={<AboutPage/>} />
-        <Route path='contacto' element={<HomePage/>} />
+        <Route path='contacto' element={<ContactPage/>} />
       </Route>
     </Routes>
   )
