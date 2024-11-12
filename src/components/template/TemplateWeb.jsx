@@ -6,9 +6,9 @@ import Footer from '../web/organisms/Footer'
 const TemplateWeb = ({children}) => {
   return (
     <>
-    <Header/>
-    <main>{children}</main>
-    <Footer/>
+    <Header />
+    <main>{children}</main> 
+    <Footer />
     </>
   )
 }
