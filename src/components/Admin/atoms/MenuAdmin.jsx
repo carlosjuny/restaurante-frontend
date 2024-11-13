@@ -32,7 +32,6 @@ const MenuStyle = styled.div`
     padding: 0;
     margin: 0;
     list-style: none;
-
   }
 
   ul li {
@@ -138,13 +137,29 @@ const MenuAdmin = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      // Reset submenus state when the menu is closed
+      setOpenSubmenus({});
+    }
   };
 
   const toggleSubmenu = (index) => {
-    setOpenSubmenus((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setOpenSubmenus((prev) => {
+      // If the submenu is already open, close it
+      const newSubmenus = { ...prev };
+      if (newSubmenus[index]) {
+        delete newSubmenus[index];  // Close the currently open submenu
+      } else {
+        // Close all other submenus and open the clicked one
+        const newSubmenus = Object.keys(prev).reduce((acc, key) => {
+          acc[key] = false; // Set all submenus to closed
+          return acc;
+        }, {});
+        newSubmenus[index] = true; // Open the clicked submenu
+        return newSubmenus;
+      }
+      return newSubmenus;
+    });
   };
 
   const submenus = [

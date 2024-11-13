@@ -5,7 +5,7 @@ import img1 from '../../../assets/image/admin_section_1.png'
 
 const SectionStyle = styled.div`
     background-image: url(${img1});
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: repeat-x;  
     width: 100%;
