@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import styled from 'styled-components'
 import Logo from '../../../assets/image/logo_ladicha_bl.png'
 import { MdDeliveryDining } from "react-icons/md"

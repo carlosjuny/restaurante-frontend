@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Image from '../atoms/Image';
 import FormCard from '../atoms/FormCard';
@@ -8,31 +7,40 @@ const SectionStyle = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   padding-bottom: 80px;
 
-  .contact-image {
+  .contactImage {
     width: 100%;
     border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
     box-shadow: none;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
+    .contactImage {
+      border-top-right-radius: 0;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .form-card {
+      width: 35%;
+    }
   }
 `;
 
 const ContactSection = () => {
   return (
     <SectionStyle>
-      <Image img={<img src={img1} alt="Contact Section" className="contact-image" />} />
-      <FormCard />
+      <Image img={<img src={img1} alt="Contact Section" className="contactImage" />} />
+      <div className="form-card">
+        <FormCard />
+      </div>
     </SectionStyle>
   );
 };

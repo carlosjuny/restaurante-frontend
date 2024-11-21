@@ -1,10 +1,9 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const ImageStyle = styled.div`
     display: flex;
-    width: 50%;
-    height: 50%;
+    /* width: 50%;
+    height: 50%; */
 
 img {
     width: 100%;

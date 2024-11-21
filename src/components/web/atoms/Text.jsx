@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 
@@ -15,7 +14,7 @@ const TextStyle = styled.div`
 }
 
 @media (min-width: 1024px) {
-    width: 33%;
+    width: 38%;
     height: 500px;
     font-size: 22px;
 }

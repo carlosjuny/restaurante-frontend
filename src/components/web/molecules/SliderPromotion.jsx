@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import img1 from '../../../assets/image/slider_image_1.jpg';
 import img2 from '../../../assets/image/slider_image_2.jpg';
@@ -19,92 +19,99 @@ const SliderContainer = styled.div`
 
 const Slide = styled.div`
   display: flex;
-  transition: transform 0.5s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
 `;
 
 const Image = styled.img`
-  padding-top: 150px;
-  padding-bottom: 50px;
-  width: 100%;
-  width: ${({ isCenter }) => (isCenter ? '500px' : '300px')};
-  height: 80%;
-  opacity: ${({ isCenter }) => (isCenter ? 1 : 0.5)};
-  transform: ${({ isLeft, isRight }) =>
-    isLeft ? 'translateX(120%) scale(0.8)' : isRight ? 'translateX(-120%) scale(0.8)' : 'scale(1)'};
-  transition: opacity 0.4s ease;
-  z-index: ${({ isCenter }) => (isCenter ? 2 : 1)};
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: ${({ isCenter, isLeft, isRight }) =>
-    isCenter
-      ? 'translateX(-50%) scale(1.2)'
-      : isLeft
-      ? 'translateX(-170%) scale(0.6)'
-      : isRight
-      ? 'translateX(70%) scale(0.6)'
-      : 'scale(0.8)'};
+  width: ${({ isCenter }) => (isCenter ? '400px' : '320px')};
+  height: auto;
+  opacity: ${({ isCenter }) => (isCenter ? 1 : 0.5)};
+  transform: ${({ position }) => position};
+  transition: all 0.5s ease;
+  z-index: ${({ isCenter }) => (isCenter ? 3 : 1)};
+
+  @media (min-width: 768px){
+  width: ${({ isCenter }) => (isCenter ? '600px' : '320px')};
+  }
 `;
 
 const Controls = styled.div`
   position: absolute;
   width: 100%;
-  top: 85%;
+  bottom: 45%;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
-  z-index: 2;
+  padding: 0 50px;
+  z-index: 3;
 
   button {
     width: 50px;
     height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: #ffffff6a;
+    color: #000000;
     border: none;
-    cursor: pointer;
     border-radius: 50%;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #F9E279;
+    }
   }
 
-  .prev {
-    position: absolute;
-    left: 250px;
-  }
+  @media (min-width: 768px){
+    button {
+    background-color: #0000009d;
+    color: #ffffff;
 
-  .next {
-    position: absolute;
-    right: 250px;
+    &:hover {
+      background-color: #8071506e;
+      border: 1px solid #000;
+      color: #000;
+    }
+    }
   }
+`;
 
-  @media (min-width: 768px) {
-    .prev {
-    left: 300px;
-  }
+const ToggleControls = styled.div`
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 
-  .next {
-    right: 300px;
-  }
-  }
+  .toggle {
+    width: 12px;
+    height: 12px;
+    background-color: #32312C;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-  @media (min-width: 1024px) {
-    
-    top: 40%;
-
-    .prev {
-    left: 250px;
-  }
-
-  .next {
-    right: 250px;
-  }
+    &.active {
+      background-color: #f0bc00;
+    }
   }
 `;
 
 const SliderPromotion = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const positions = [
+    'translate(-150%, -50%) scale(0.8)',
+    'translate(-50%, -50%) scale(1)',
+    'translate(50%, -50%) scale(0.8)',
+  ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -116,22 +123,24 @@ const SliderPromotion = () => {
     );
   };
 
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <SliderContainer>
       <Slide>
         {images.map((img, index) => {
-          const isCenter = index === currentIndex;
-          const isLeft = index === (currentIndex - 1 + images.length) % images.length;
-          const isRight = index === (currentIndex + 1) % images.length;
+          const relativeIndex = (index - currentIndex + images.length) % images.length;
+          const position = positions[relativeIndex];
 
           return (
             <Image
               key={index}
               src={img}
               alt={`Slide ${index}`}
-              isCenter={isCenter}
-              isLeft={isLeft}
-              isRight={isRight}
+              position={position}
+              isCenter={relativeIndex === 1}
             />
           );
         })}
@@ -140,6 +149,15 @@ const SliderPromotion = () => {
         <button onClick={prevSlide} className="prev">❮</button>
         <button onClick={nextSlide} className="next">❯</button>
       </Controls>
+      <ToggleControls>
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`toggle ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          ></div>
+        ))}
+      </ToggleControls>
     </SliderContainer>
   );
 };

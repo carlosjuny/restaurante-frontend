@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const ButtonNav =styled.div`
@@ -29,6 +28,7 @@ const ButtonNav =styled.div`
 }
 
     @media screen and (min-width: 1024px){
+      top: 25rem;
 
 }
 `

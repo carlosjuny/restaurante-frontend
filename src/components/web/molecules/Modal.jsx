@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import styled from 'styled-components'
 import chef from '../../../assets/image/login_modal.jpg'
 import ImgGoogle from '../../../assets/image/login_icon_google_plus.png'
+import { Link } from 'react-router-dom'
 
 const ModalStyle =styled.div`
     width: 100%;
@@ -211,7 +212,7 @@ const handleLoginClick = (e) => {
             <Form>
               <Input type="text" placeholder="Usuario" />
               <Input type="password" placeholder="Contraseña" />
-              <SubmitButton type="submit">Acceder</SubmitButton>
+              <SubmitButton type="submit"><Link to='/admin' className='navLink'>Acceder</Link></SubmitButton>
             </Form>
             <p>¿No tienes una cuenta? <a href="#" onClick={handleRegisterClick}>Regístrate</a></p>
           </>

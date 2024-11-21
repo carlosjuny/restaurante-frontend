@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const IconStyle = styled.div`
@@ -7,6 +6,8 @@ const IconStyle = styled.div`
     height: 8%;
 
 img {
+  width: 2.8%;
+  height: 5.6%;
 } 
 
 @media screen and  (min-width: 768px) { 

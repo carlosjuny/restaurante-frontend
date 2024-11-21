@@ -12,6 +12,7 @@ const CardContainer = styled.div`
   padding-bottom: 60px;
   margin-bottom: 30px;
   border-radius: 5px;
+  background-color: #c1c1c181;
   grid-template-columns: 1fr;
   box-shadow: 1px 4px 4px 1px rgba(56, 56, 56, 0.25), 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
   @media (min-width: 768px) {

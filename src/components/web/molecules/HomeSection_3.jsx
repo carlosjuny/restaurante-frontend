@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import Image from '../atoms/Image'
 import Text from '../atoms/Text'
@@ -20,8 +19,6 @@ const Section_3 =styled.div`
     padding-bottom: 50px;
 
     img {
-        width: 35rem;
-        margin-left: -8rem;
         box-shadow: none;
     }
 

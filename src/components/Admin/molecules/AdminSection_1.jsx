@@ -1,13 +1,12 @@
-import React from 'react'
 import styled from 'styled-components'
-import img1 from '../../../assets/image/admin_section_1.png'
+import img1 from '../../../assets/image/admin_section_2.jpg'
 
 
 const SectionStyle = styled.div`
     background-image: url(${img1});
     background-size: cover;
     background-position: center;
-    background-repeat: repeat-x;  
+    background-repeat: no-repeat;  
     width: 100%;
     height: 100vh;
     object-fit: cover; 

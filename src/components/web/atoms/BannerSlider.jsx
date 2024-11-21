@@ -9,9 +9,6 @@ const BannerStyle = styled.div`
   overflow: hidden;
   margin-top: -118px;
 
-  @media (min-width: 1024px) {
-  }
-
   .slide {
     position: absolute;
     width: 100%;
@@ -46,44 +43,62 @@ const BannerStyle = styled.div`
   .controls {
     position: relative;
     z-index: 2;
-    top: 54%;
+    top: 52%;
     left: 45%;
-    transform: translateX(-43%);
+    transform: translateX(-43.5%);
     display: flex;
     gap: 10px;
 
-    @media (min-width: 1024px) {
-      left: 44%;
-      top: 50%;
+    button {
+      width: 40px;
+      height: 40px;
+      background-color: #4747476f;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      font-size: 22px;
+      z-index: 2;
+
+      &:hover {
+        background-color: #F4D976;
+        color: #32312C;
+        transition: 0.5s ease;
+      }
+    }
+
+    .prev {
+      position: absolute;
+      right: 40px;
+      color: #ffffff;
+    }
+
+    .next {
+      left: -25px;
+      color: #ffffff;
     }
   }
 
-  button {
-    width: 40px;
-    height: 40px;
-    background-color: #4747476f;
-    border: none;
-    cursor: pointer;
-    border-radius: 2px;
-    font-size: 22px;
-    z-index: 2;
-  }
-
-  .prev {
+  .toggle-controls {
     position: absolute;
-    right: 25px;
-    color: #ffffff;
-  }
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 
-  .next {
-    left: -25px;
-    color: #ffffff;
-  }
+    .toggle {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 2;
 
-  .next:hover, .prev:hover {
-    background-color: #F4D976;
-    color: #32312C;
-    transition: 0.5s ease;
+      &.active {
+        background-color: #f4d976;
+      }
+    }
   }
 `;
 
@@ -98,6 +113,10 @@ const BannerSlider = ({ images }) => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
   };
 
   useEffect(() => {
@@ -118,6 +137,15 @@ const BannerSlider = ({ images }) => {
       <div className="controls">
         <button className="next" onClick={prevSlide}>❮</button>
         <button className="prev" onClick={nextSlide}>❯</button>
+      </div>
+      <div className="toggle-controls">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`toggle ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          ></div>
+        ))}
       </div>
       <ButtonNavegation>Ver nuestro menú</ButtonNavegation>
     </BannerStyle>

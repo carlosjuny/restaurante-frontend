@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import Icon from './Icon'
 import IconSearch from '../../../assets/svg/search.svg'
@@ -17,6 +16,7 @@ const InputStyle =styled.input`
     border: 1px solid #6D6C6C;
     box-shadow: 1px 2px 4px 1px #6d6c6c9b;
     outline: none;
+    padding: 5px;
 
     ::placeholder {
       color: #32312C;
@@ -42,12 +42,12 @@ const IconContainer = styled.div`
   }
 `
 
-const Input = ({placeholder}) => {
+const Input = () => {
   return (
     <InputContainer>
       <InputStyle 
       type="text"
-      placeholder={placeholder}>
+      placeholder='Buscar'>
       </InputStyle>
       <IconContainer>
         <Icon icon={<img src={IconSearch} />} />

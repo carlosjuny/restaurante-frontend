@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Menu from '../../../assets/svg/menu_grid.svg';
@@ -23,7 +23,7 @@ const MenuStyle = styled.div`
   overflow-y: auto;
 
   @media (min-width: 1024px) {
-    width: ${(props) => (props.isOpen ? '20%' : '4%')};
+    width: ${(props) => (props.isOpen ? '18%' : '4%')};
   }
 
   ul {
