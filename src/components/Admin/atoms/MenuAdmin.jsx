@@ -40,6 +40,7 @@ const MenuStyle = styled.div`
     padding: 15px;
     align-items: flex-start;
     position: relative;
+    margin-left: 0.2rem;
   }
 
   ul li .menu-item {
@@ -112,7 +113,7 @@ const MenuToggleIcon = styled.div`
   cursor: pointer;
   position: relative;
   top: 5px;
-  left: ${(props) => (props.isOpen ? '10px' : '10px')};
+  left: ${(props) => (props.isOpen ? '15px' : '15px')};
   width: 200px;
   height: 40px;
   display: flex;
@@ -138,24 +139,24 @@ const MenuAdmin = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     if (isMenuOpen) {
-      // Reset submenus state when the menu is closed
+
       setOpenSubmenus({});
     }
   };
 
   const toggleSubmenu = (index) => {
     setOpenSubmenus((prev) => {
-      // If the submenu is already open, close it
+
       const newSubmenus = { ...prev };
       if (newSubmenus[index]) {
-        delete newSubmenus[index];  // Close the currently open submenu
+        delete newSubmenus[index];
       } else {
-        // Close all other submenus and open the clicked one
+
         const newSubmenus = Object.keys(prev).reduce((acc, key) => {
-          acc[key] = false; // Set all submenus to closed
+          acc[key] = false;
           return acc;
         }, {});
-        newSubmenus[index] = true; // Open the clicked submenu
+        newSubmenus[index] = true;
         return newSubmenus;
       }
       return newSubmenus;
@@ -227,7 +228,7 @@ const MenuAdmin = () => {
                 </>
               ) : (
                 // Link directo
-                <Link to="/" className="menu-item">
+                <Link to="admin" className="menu-item">
                   <img src={submenu.icon} alt={`${submenu.title} Icon`} />
                   <span>{submenu.title}</span>
                 </Link>
