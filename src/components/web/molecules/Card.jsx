@@ -103,7 +103,12 @@ const Overlay = styled.div`
   }
 `;
 
-const Card = () => {
+const Card = ({ addToCart }) => {
+  const handleAddToCart = () => {
+    const item = { name: "Carne, papas y ensalada", price: 20000, image: Receta };
+    addToCart(item);
+  };
+
   return (
     <CardContainer>
       {[...Array(8)].map((_, i) => (
@@ -112,7 +117,7 @@ const Card = () => {
           <h3>Carne, papas y ensalada</h3>
           <Overlay className="overlay">
             <p>COP 20000.00</p>
-            <button>Añadir al carrito</button>
+            <button onClick={handleAddToCart}>Añadir al carrito</button>
           </Overlay>
         </CardStyle>
       ))}

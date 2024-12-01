@@ -32,7 +32,7 @@ const ButtonStyle =styled.button`
     }
 
     @media screen and (min-width: 1024px){
-      top: -3.8rem;
+      top: -2.8rem;
       left: 0.8rem;
 
     }

@@ -4,7 +4,8 @@ import Logo from '../../../assets/image/logo_ladicha_bl.png'
 import { MdDeliveryDining } from "react-icons/md"
 import { FaUser } from "react-icons/fa"
 import Button from '../atoms/button'
-import Modal from './Modal'
+import Modal from '../atoms/Modal';
+import LoginRegisterForm from '../atoms/LoginRegister';
 import { Link } from 'react-router-dom'
 
 
@@ -170,7 +171,6 @@ const Tooltip = styled.div`
   transition: opacity 0.3s;
   z-index: 3;
 
-  /* Flecha tooltip */
   &::after {
     content: '';
     position: absolute;
@@ -184,7 +184,7 @@ const Tooltip = styled.div`
   }
 
   @media screen and (min-width: 1024px){
-    top: -10px;
+    top: 0;
   }
 `;
 
@@ -195,6 +195,7 @@ const Navbar = () => {
     const [toggleIcon, setToggleIcon] = useState('nav-toggle');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
 
     const navToggle = () => {
         active === 'menu'
@@ -226,17 +227,21 @@ const Navbar = () => {
                 <div className='line3'></div>
             </div>
             <ButtonContainer
-                onMouseEnter={() => setShowTooltip(true)}
-                onMouseLeave={() => setShowTooltip(false)}
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
             >
-                <Button onClick={openModal}>
-                    <FaUser /><p>Acceso</p>
-                </Button>
-                <Tooltip show={showTooltip}>
-                    Inicia sesión para disfrutar nuestros descuentos
-                </Tooltip>
-            </ButtonContainer>
-        {isModalOpen && <Modal onClose={closeModal} />}
+            <Button onClick={openModal}>
+                <FaUser /><p>Acceso</p>
+            </Button>
+            <Tooltip show={showTooltip}>
+                Inicia sesión para disfrutar nuestros descuentos
+            </Tooltip>
+        </ButtonContainer>
+        {isModalOpen && (
+            <Modal onClose={closeModal}>
+                <LoginRegisterForm />
+            </Modal>
+        )}
     </Nav>
   )
 }
