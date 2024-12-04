@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import IconAdmin from '../atoms/IconAdmin'
 import Avatar from '../../../assets/image/avatar-de-hombre.png'

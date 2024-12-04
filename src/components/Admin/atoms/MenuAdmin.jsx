@@ -104,7 +104,7 @@ const Submenu = styled.ul`
     color: #ffffff;
     font-size: 0.9rem;
     width: 200px;
-    margin-left: 50%;
+    margin-left: 40%;
     padding-top: 1rem;
   }
 `;
@@ -172,22 +172,22 @@ const MenuAdmin = () => {
     {
       title: 'Mercadeo y Servicio',
       icon: Store,
-      options: ['Ventas', 'Promociones', 'Feedback'],
+      options: ['Punto de venta', 'Clientes', 'Pedidos', 'Gestión de mesas'],
     },
     {
       title: 'Área de Producción',
       icon: User,
-      options: ['Producción diaria', 'Control de calidad'],
+      options: ['Inventario', 'Menú', 'Proveedores'],
     },
     {
       title: 'Área Financiera',
       icon: User,
-      options: ['Facturación', 'Cuentas por pagar'],
+      options: ['Contabilidad', 'Reportes'],
     },
     {
       title: 'Área Administrativa',
       icon: Settings,
-      options: ['RRHH', 'Proyectos', 'Oficinas'],
+      options: ['Gestión documentos', 'Sitio Web', 'Configuración'],
     },
     {
       title: 'Dashboard',
