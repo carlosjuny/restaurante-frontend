@@ -8,8 +8,6 @@ const FormStyle = styled.div`
   width: 100%;
   height: 100%;
   background-color: #333333;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   padding: 40px;
@@ -25,15 +23,18 @@ const FormStyle = styled.div`
     width: 100%; 
     height: 10rem; 
     padding: 8px;
+    background: none;
+    border: 1px solid #F4D976;
   }
 
   button {
-    width: 100%;
+    width: 50%;
     height: 3rem;
     top: 15px;
     left: 0%;
     background-color: #E9D279;
     font-weight: 600;
+    border-radius: 0px;
 
     &:hover {
       transition: 0.5s ease;
@@ -43,9 +44,6 @@ const FormStyle = styled.div`
   }
 
   @media  (min-width: 1024px){
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
 
     textarea {
       height: 100%;

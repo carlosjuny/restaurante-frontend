@@ -1,4 +1,3 @@
-import React from 'react'
 import TemplateWeb from '../components/template/TemplateWeb'
 import TitlePage from '../components/web/atoms/TitlePage'
 import MenuSection_1 from '../components/web/molecules/MenuSection_1'

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import img1 from '../../../assets/image/logo_ladicha_bl.png'
 import { FaWhatsapp } from "react-icons/fa";
@@ -18,11 +17,7 @@ const FooterStyle =styled.div`
   background-position: center;
   background-repeat: no-repeat;
 
-  @media (min-width: 1024px) {
-    /* height: 60vh; */
-  }
-
-  &::before {
+   &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -34,15 +29,15 @@ const FooterStyle =styled.div`
 
   img {
     width: 5rem;
-    margin-left: 6.5rem;
-    margin-top: 1rem;
+    margin-left: 5.5rem;
+    margin-top: 2rem;
     position: relative;
   }
 
   .copyright {
     text-align: center;
     color: #ffffff;
-    margin-top: 5rem;
+    margin-top: 7rem;
     position: relative;
   }
 
@@ -57,6 +52,7 @@ const FooterStyle =styled.div`
   }
 
   .networks .network {
+    margin-top: 3rem;
     margin-left: 1rem;
   }
 
@@ -67,8 +63,9 @@ const FooterStyle =styled.div`
 
 
   h2 {
+    font-size: 40px;
     margin-top: -3rem;
-    margin-right: -10.5rem;
+    margin-right: -12.5rem;
   }
   
   .menuFooter {
@@ -80,6 +77,7 @@ const FooterStyle =styled.div`
   .menuFooter li {
     list-style: none;
     line-height: 40px;
+    margin-bottom: 15px;
   }
 
   .menuFooter a {
@@ -92,6 +90,11 @@ const FooterStyle =styled.div`
   .menuFooter a:hover {
     color: #E9D282;
   }
+
+  @media (min-width: 1024px) {
+    height: 75vh;
+  }
+
 `
 
 const Footer = () => {
@@ -107,10 +110,11 @@ const Footer = () => {
       </div>
       <div className='menuFooter'>
         <ul>
+          <li><Link to='/' className='navLink'>Inicio</Link></li>
           <li><Link to='/sobrenosotros' className='navLink'>Sobre de nosotros</Link></li>
           <li><Link to='/menu' className='navLink'>Menú</Link></li>
-          <li><Link to='/promotions' className='navLink'>Promociones</Link></li>
-          <li><Link to='/contact' className='navLink'>Contacto</Link></li>
+          <li><Link to='/promociones' className='navLink'>Promociones</Link></li>
+          <li><Link to='/contacto' className='navLink'>Contacto</Link></li>
         </ul>        
       </div>
       <p className='copyright'>Restaurante La Dicha - Todos los derechos de autor</p>

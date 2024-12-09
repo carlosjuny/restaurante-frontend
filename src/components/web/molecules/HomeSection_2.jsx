@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import Image from '../atoms/Image'
 import Text from '../atoms/Text'
@@ -47,7 +46,7 @@ const Section_2 =styled.div`
 const HomeSection_2 = () => {
   return (
     <Section_2>
-        <Text><p>Bienvenidos a "La Dicha", un rincòn gastronómico donde
+        <Text><p>Bienvenidos a La Dicha, un rincòn gastronómico donde
           la alegrìa se fusiona con los sabores exquisitos. En el corazòn de 
           nuestra cocina, encontrarà una experiencia culinaria ùnica que combina
           la tradición con la innovación, creando momentos de felicidad en cada bocado.</p></Text>

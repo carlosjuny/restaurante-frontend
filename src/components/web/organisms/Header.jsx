@@ -8,6 +8,7 @@ import MenuBanner2 from '../../../assets/image/menu_section_2.jpg';
 import AboutBanner from '../../../assets/image/about_restaurant.jpg';
 import AboutBanner2 from '../../../assets/image/about_restaurant_2.jpg';
 import ContactBanner from '../../../assets/image/contact_section_1.jpg';
+import PromotionBanner from '../../../assets/image/promotion_section_1.jpg';
 import BannerSlider from '../atoms/BannerSlider';
 import BarraNav from '../atoms/BarraNav';
 import Input from '../atoms/Input';
@@ -25,7 +26,7 @@ const Header = () => {
   const imagesMenu = [MenuBanner1, MenuBanner2];
   const imagesAbout = [AboutBanner, AboutBanner2];
   const imagesContact = [ContactBanner, Slide2];
-  const imagesPromotion = [ContactBanner, Slide2];
+  const imagesPromotion = [PromotionBanner, Slide2];
 
   const images = 
     location.pathname === '/menu' ? imagesMenu :

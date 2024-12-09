@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from '../atoms/Image'
 import Text from '../atoms/Text'
 import styled from 'styled-components'

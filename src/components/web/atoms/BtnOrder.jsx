@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import styled from 'styled-components'
 
 const ButtonOrder = styled.button`
@@ -46,6 +47,11 @@ const BtnOrder = ({ children, onClick }) => {
     {children}
     </ButtonOrder>
   )
-}
+};
+
+BtnOrder.propTypes = {
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func.isRequired,
+  };
 
 export default React.memo(BtnOrder);

@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react'
 import axios from 'axios';
 
 const RecursosHumanos = () => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import ButtonNavegation from './ButtonNavegation';
 
 const BannerStyle = styled.div`
@@ -150,6 +151,10 @@ const BannerSlider = ({ images }) => {
       <ButtonNavegation>Ver nuestro menú</ButtonNavegation>
     </BannerStyle>
   );
+};
+
+BannerSlider.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default React.memo(BannerSlider);

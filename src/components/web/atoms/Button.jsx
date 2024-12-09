@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import styled from 'styled-components'
 
 const ButtonStyle =styled.button`
@@ -45,5 +46,10 @@ const Button = ({ children, onClick }) => (
     {children}
   </ButtonStyle>
 );
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default React.memo(Button);

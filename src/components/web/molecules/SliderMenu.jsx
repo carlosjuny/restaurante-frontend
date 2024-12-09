@@ -1,4 +1,3 @@
-import React from 'react'
 import SliderMen1 from '../../../assets/image/footer_1.jpg'
 import SliderMen2 from '../../../assets/image/login_modal.jpg'
 import SliderMen3 from '../../../assets/image/login_modal.jpg'

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import ButtonSelect from '../atoms/ButtonSelect'
 import Card from '../molecules/Card'

@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const ButtonNav =styled.div`
+const ButtonNav = styled.div`
     position: relative;
     display: flex;
     bottom: 0;
@@ -25,20 +26,21 @@ const ButtonNav =styled.div`
     }
 
     @media screen and (max-width: 769px) {
-}
+    }
 
-    @media screen and (min-width: 1024px){
-      top: 25rem;
-
-}
-`
+    @media screen and (min-width: 1024px) {
+        top: 25rem;
+    }
+`;
 
 const ButtonNavegation = ({ children, onClick }) => {
-  return (
-    <ButtonNav onClick={onClick}>
-    {children}
-    </ButtonNav>
-  )
-}
+    return <ButtonNav onClick={onClick}>{children}</ButtonNav>;
+};
 
-export default ButtonNavegation
+
+ButtonNavegation.propTypes = {
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func.isRequired,
+};
+
+export default ButtonNavegation;

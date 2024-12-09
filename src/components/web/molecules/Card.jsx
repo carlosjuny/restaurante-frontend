@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Receta from '../../../assets/image/card_image_1.jpg';
 
@@ -103,12 +102,7 @@ const Overlay = styled.div`
   }
 `;
 
-const Card = ({ addToCart }) => {
-  const handleAddToCart = () => {
-    const item = { name: "Carne, papas y ensalada", price: 20000, image: Receta };
-    addToCart(item);
-  };
-
+const Card = () => {
   return (
     <CardContainer>
       {[...Array(8)].map((_, i) => (
@@ -117,7 +111,7 @@ const Card = ({ addToCart }) => {
           <h3>Carne, papas y ensalada</h3>
           <Overlay className="overlay">
             <p>COP 20000.00</p>
-            <button onClick={handleAddToCart}>Añadir al carrito</button>
+            <button>Añadir al carrito</button>
           </Overlay>
         </CardStyle>
       ))}

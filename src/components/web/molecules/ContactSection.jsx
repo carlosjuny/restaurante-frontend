@@ -13,9 +13,17 @@ const SectionStyle = styled.div`
 
   .contactImage {
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
     box-shadow: none;
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 17.5%;
+    width: 30%;
+    height: 89%;
+    background-color: rgba(53, 52, 52, 0.71);
+    z-index: 1;
   }
 
   @media (min-width: 768px) {
@@ -24,8 +32,6 @@ const SectionStyle = styled.div`
 
     .contactImage {
       border-top-right-radius: 0;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
     }
 
     .form-card {
@@ -37,6 +43,7 @@ const SectionStyle = styled.div`
 const ContactSection = () => {
   return (
     <SectionStyle>
+      <div className="image-overlay" /> {/* Aquí va el fondo */}
       <Image img={<img src={img1} alt="Contact Section" className="contactImage" />} />
       <div className="form-card">
         <FormCard />

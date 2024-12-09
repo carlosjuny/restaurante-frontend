@@ -188,14 +188,12 @@ const Tooltip = styled.div`
   }
 `;
 
-
 const Navbar = () => {
 
     const [active, setActive] = useState("menu");
     const [toggleIcon, setToggleIcon] = useState('nav-toggle');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
 
     const navToggle = () => {
         active === 'menu'
