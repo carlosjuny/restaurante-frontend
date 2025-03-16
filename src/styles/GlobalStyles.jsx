@@ -2,6 +2,14 @@ import { createGlobalStyle } from "styled-components";
 import "@fontsource/laila";
 
 const GlobalStyles = createGlobalStyle`
+
+@font-face {
+    font-family: 'FoodSimple';
+    src: url('/fonts/FoodSimple.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +25,12 @@ html, body {
   width:100%;
   height: 100vh;
   background-color: #ffffff;
+}
+
+h1 {
+  font-family: 'FoodSimple', sans-serif;
+  margin-bottom: 60px;
+  font-weight: 100;
 }
 
 a{

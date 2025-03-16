@@ -71,14 +71,19 @@ const Section_3 =styled.div`
 `
 
 const HomeSection_3 = () => {
+
+    const handleClick = () => {
+        alert('¡Ordenando!');
+    };
+
   return (
     <Section_3>
         <Image img={<img src={img1} alt="Home section 1"/>} />
         <Text className={'textSection3'}>
             <p>Selecciona tu favorito de los 5 del menù.</p>
-            <h1>¡ORDENALO YA!</h1>
+            <h1>¡Ordenalo ya!</h1>
         </Text>
-    <BtnOrder>Aquí</BtnOrder>
+    <BtnOrder onClick={handleClick}>Aquí</BtnOrder>
     </Section_3>
   )
 }

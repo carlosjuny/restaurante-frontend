@@ -5,7 +5,7 @@ import MenuSection_1 from '../components/web/molecules/MenuSection_1'
 const MenuPage = () => {
   return (
     <TemplateWeb>
-        <TitlePage title="Carta menú" />
+        <TitlePage title="Carta menù" />
         <MenuSection_1 />
     </TemplateWeb>
   )

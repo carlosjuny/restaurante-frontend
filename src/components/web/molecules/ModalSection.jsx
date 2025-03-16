@@ -34,6 +34,13 @@ const SubmitButton = styled.button`
 
 const LoginRegisterForm = () => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    password: '',
+    usuario: '',
+    contraseña: ''
+  });
 
   const handleRegisterClick = (e) => {
     e.preventDefault();
@@ -45,13 +52,85 @@ const LoginRegisterForm = () => {
     setShowRegisterForm(false);
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleRegisterSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert('Registro exitoso: ' + data.message);
+      } else {
+        const error = await response.json();
+        alert('Error en el registro: ' + error.message);
+      }
+    } catch (error) {
+      console.error('Error al registrar:', error);
+    }
+  };
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          usuario: formData.usuario,
+          password: formData.contraseña,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert('Inicio de sesión exitoso: ' + data.message);
+      } else {
+        const error = await response.json();
+        alert('Error al iniciar sesión: ' + error.message);
+      }
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+    }
+  };
+
   return showRegisterForm ? (
     <>
       <h2>Regístrate</h2>
-      <Form>
-        <Input type="text" placeholder="Nombre" />
-        <Input type="email" placeholder="Correo electrónico" />
-        <Input type="password" placeholder="Contraseña" />
+      <Form onSubmit={handleRegisterSubmit}>
+        <Input
+          type="text"
+          name="nombre"
+          placeholder="Nombre"
+          value={formData.nombre}
+          onChange={handleInputChange}
+        />
+        <Input
+          type="email"
+          name="email"
+          placeholder="Correo electrónico"
+          value={formData.email}
+          onChange={handleInputChange}
+        />
+        <Input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          value={formData.password}
+          onChange={handleInputChange}
+        />
         <SubmitButton type="submit">Regístrate</SubmitButton>
       </Form>
       <p>¿Ya tienes una cuenta? <a href="#" onClick={handleLoginClick}>Inicia sesión</a></p>
@@ -63,9 +142,21 @@ const LoginRegisterForm = () => {
         <img src={ImgGoogle} alt="Google" />
       </div>
       <h2>Iniciar Sesión</h2>
-      <Form>
-        <Input type="text" placeholder="Usuario" />
-        <Input type="password" placeholder="Contraseña" />
+      <Form onSubmit={handleLoginSubmit}>
+        <Input
+          type="text"
+          name="usuario"
+          placeholder="Usuario"
+          value={formData.usuario}
+          onChange={handleInputChange}
+        />
+        <Input
+          type="password"
+          name="contraseña"
+          placeholder="Contraseña"
+          value={formData.contraseña}
+          onChange={handleInputChange}
+        />
         <SubmitButton type="submit">
           <Link to="/admin" className="navLink">Acceder</Link>
         </SubmitButton>

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Icon from './Icon'
 import IconSearch from '../../../assets/svg/search.svg'
+import PropsTypes from 'prop-types'
 
 
 const InputContainer = styled.div`
@@ -42,18 +43,24 @@ const IconContainer = styled.div`
   }
 `
 
-const Input = () => {
+const Input = ({ onChange }) => {
   return (
     <InputContainer>
       <InputStyle 
       type="text"
-      placeholder='Buscar'>
+      placeholder='Buscar'
+      onChange={onChange}
+      >
       </InputStyle>
       <IconContainer>
         <Icon icon={<img src={IconSearch} />} />
       </IconContainer>
     </InputContainer>
   )
+}
+
+Input.propTypes = {
+  onChange: PropsTypes.func.isRequired
 }
 
 export default Input

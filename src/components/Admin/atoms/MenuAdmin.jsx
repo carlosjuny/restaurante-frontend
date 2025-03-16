@@ -14,7 +14,7 @@ const MenuStyle = styled.div`
   position: fixed;
   top: 0;
   left: ${(props) => (props.isOpen ? '0' : '0%')};
-  width: ${(props) => (props.isOpen ? '50%' : '10%')};
+  width: ${(props) => (props.isOpen ? '350px' : '60px')};
   height: 100vh;
   background-color: #4b4b4bdd;
   z-index: 1;
@@ -23,7 +23,7 @@ const MenuStyle = styled.div`
   overflow-y: auto;
 
   @media (min-width: 1024px) {
-    width: ${(props) => (props.isOpen ? '18%' : '4%')};
+    /* width: ${(props) => (props.isOpen ? '18%' : '4%')}; */
   }
 
   ul {

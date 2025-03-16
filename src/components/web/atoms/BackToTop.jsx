@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-
 
 const waveAnimation = keyframes`
   0% {
@@ -11,14 +10,13 @@ const waveAnimation = keyframes`
   }
 `;
 
-
 const BackTop = styled.div`
   position: fixed;
   width: 2.5rem;
   height: 2.5rem;
   bottom: 20px;
   right: 20px;
-  display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
+  display: none;
   background-color: #32312C;
   color: #fff;
   border-radius: 50%;
@@ -27,7 +25,10 @@ const BackTop = styled.div`
   text-align: center;
   z-index: 6;
 
-  // Onda animación
+  &.visible {
+    display: block;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -43,7 +44,6 @@ const BackTop = styled.div`
     background-color: #555;
   }
 
-  // Ondas adicionales al hover
   &:hover::after {
     content: '';
     position: absolute;
@@ -58,20 +58,19 @@ const BackTop = styled.div`
 `;
 
 const BackToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
   const toggleVisibility = () => {
+    const button = document.getElementById('back-to-top');
     if (window.pageYOffset > 300) {
-      setIsVisible(true);
+      button.classList.add('visible');
     } else {
-      setIsVisible(false);
+      button.classList.remove('visible');
     }
   };
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -83,7 +82,7 @@ const BackToTop = () => {
   }, []);
 
   return (
-    <BackTop isVisible={isVisible} onClick={scrollToTop}>
+    <BackTop id="back-to-top" onClick={scrollToTop}>
       ↑
     </BackTop>
   );

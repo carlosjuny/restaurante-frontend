@@ -1,16 +1,14 @@
 import styled from 'styled-components'
+import PropsTypes from 'prop-types'
 
 const IconStyle = styled.div`
     display: flex;
-    width: 8%;
-    height: 8%;
 
 img {
-  width: 2.8%;
-  height: 5.6%;
+  width: 50px;
 } 
 
-@media screen and  (min-width: 768px) { 
+@media (min-width: 768px) { 
 }
 
 @media (min-width: 1024px) {
@@ -23,6 +21,10 @@ const IconAdmin = ({ iconSrc  }) => {
         <img src={iconSrc} alt="icon" />
     </IconStyle>
   )
+}
+
+IconAdmin.propsTypes = {
+  iconSrc: PropsTypes.string.isRequired
 }
 
 export default IconAdmin

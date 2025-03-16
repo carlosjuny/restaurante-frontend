@@ -5,6 +5,8 @@ const BarraNavb =styled.div`
     width: 100%;
     height: 2.5rem;
     background-color: #F4D976;
+    position: relative;
+    z-index: 2;
 
     .num {
         position: relative;
@@ -15,20 +17,9 @@ const BarraNavb =styled.div`
 
     .phone {
         position: absolute;
-        right: 26%;
-        top: 0.8rem;
+        right: 160px;
+        top: 11px;
     }
-
-@media (min-width: 768px){
-  .phone {
-    right: 17%;
-  }
-}
-@media (min-width: 1024px){
-  .phone {
-    right: 12.5%;
-  }
-}
 `
 
 const BarraNav = () => {

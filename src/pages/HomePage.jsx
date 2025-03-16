@@ -3,7 +3,7 @@ import TitlePage from '../components/web/atoms/TitlePage'
 import HomeSection_1 from '../../src/components/web/molecules/HomeSection_1'
 import HomeSection_2 from '../../src/components/web/molecules/HomeSection_2'
 import HomeSection_3 from '../../src/components/web/molecules/HomeSection_3'
-import SliderPromotion from '../../src/components/web/molecules/SliderPromotion'
+import HomeSectionFour from '../components/web/organisms/HomeSectionFour'
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
         <HomeSection_1 />
         <HomeSection_2 />
         <HomeSection_3 />
-        <SliderPromotion />
+        <HomeSectionFour />
     </TemplateWeb>
   )
 }

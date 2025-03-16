@@ -1,12 +1,10 @@
 import styled from 'styled-components'
-
+import PropsTypes from 'prop-types'
 
 const TextStyle = styled.div`
     width: 70%;
-    height: 75%;
     line-height: 45px;
     padding: 2rem 2rem;
-    background-color: #353434;
     color: #ffffff;
 
 @media (min-width: 768px) {
@@ -15,7 +13,6 @@ const TextStyle = styled.div`
 
 @media (min-width: 1024px) {
     width: 38%;
-    height: 500px;
     font-size: 22px;
 }
 `
@@ -26,6 +23,11 @@ const Text = ({children, className}) => {
         {children} 
     </TextStyle>
   )
+}
+
+Text.propTypes = {
+  children: PropsTypes.node.isRequired,
+  className: PropsTypes.string
 }
 
 export default Text

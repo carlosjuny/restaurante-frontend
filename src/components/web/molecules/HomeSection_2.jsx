@@ -43,13 +43,19 @@ const Section_2 =styled.div`
 }
 `
 
+const TextStyle = styled(Text)`
+  background: none;
+  color: #32312C;
+`
+
 const HomeSection_2 = () => {
   return (
     <Section_2>
-        <Text><p>Bienvenidos a La Dicha, un rincòn gastronómico donde
-          la alegrìa se fusiona con los sabores exquisitos. En el corazòn de 
-          nuestra cocina, encontrarà una experiencia culinaria ùnica que combina
-          la tradición con la innovación, creando momentos de felicidad en cada bocado.</p></Text>
+        <TextStyle><h1>Sabores Que Inspiran</h1><p>En nuestro menú descubrirás una cuidadosa selección 
+          de platillos elaborados con los ingredientes más frescos y de la más alta calidad.
+          combinando sabores auténticos con una presentación sofisticada. Desde entradas irresistibles 
+          hasta postres exquisitos, cada bocado está pensado para deleitar tu paladar y hacer de cada 
+          visita una ocasión especial.</p></TextStyle>
         <Image img={<img src={img1} alt="Home section 2"/>} />
     </Section_2>
   )

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import img1 from '../../../assets/image/admin_section_2.jpg'
 import ListBackground from '../atoms/ListBackground'
-import FormList from '../atoms/FormList'
 
 
 const SectionStyle = styled.div`
+    position: fixed;
     background-image: url(${img1});
     background-size: cover;
     background-position: center;
@@ -13,13 +13,13 @@ const SectionStyle = styled.div`
     height: 100vh;
     object-fit: cover;
     display: flex;
+    overflow: hidden;
 `
 
 const AdminSection_1 = () => {
   return (
     <SectionStyle>
       <ListBackground />
-      <FormList />
     </SectionStyle>
   )
 }

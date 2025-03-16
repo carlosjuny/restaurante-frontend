@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
+import PropsTypes from 'prop-types'
 
 const IconStyle = styled.div`
   width: 50px;
@@ -16,5 +16,9 @@ const Icon = ({ icon }) => {
     </IconStyle>
   );
 };
+
+Icon.propTypes = {
+  icon: PropsTypes.node.isRequired
+}
 
 export default Icon;

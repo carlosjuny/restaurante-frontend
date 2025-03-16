@@ -28,8 +28,8 @@ const ButtonStyle =styled.button`
 
     &:hover {
         transition: 0.4s;
-        background-color: #32312C;
-        color: #ffffff;
+        background-color: #EFD574;
+        color: #32312C;
     }
 
     @media screen and (min-width: 1024px){
@@ -39,7 +39,6 @@ const ButtonStyle =styled.button`
     }
 
 `
-
 
 const Button = ({ children, onClick }) => (
   <ButtonStyle onClick={onClick}>
