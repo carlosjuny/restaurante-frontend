@@ -1,0 +1,53 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const ButtonStyle = styled.button`
+    width: 6.5rem;
+    height: 2.5rem;
+    display: flex;
+    position: relative;
+    left: 25px;
+    top: -2rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    background-color: #ffffff;
+    color: #32312C;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+
+    .icon {
+        font-size: 20px;
+    }
+
+    p {
+        margin-left: 0.5rem;
+        margin-top: 0.2rem;
+    }
+
+    &:hover {
+        transition: 0.4s;
+        background-color: #EFD574;
+        color: #32312C;
+    }
+
+    @media (min-width: 1024px){
+        top: -2.8rem;
+        left: 0.8rem;
+    }
+`;
+
+const Button = ({ children, onClick, className }) => (
+  <ButtonStyle onClick={onClick} className={className}>
+    {children}
+  </ButtonStyle>
+);
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+};
+
+export default React.memo(Button);

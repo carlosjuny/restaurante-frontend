@@ -78,5 +78,9 @@ a{
       
     }
   }
+
+  .overlay-cart {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 `
 export default GlobalStyles;
