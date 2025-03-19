@@ -1,9 +1,13 @@
 import { ReactSVG } from 'react-svg';
 import PropTypes from 'prop-types';
 import arrowUp from '../../../assets/svg/up.svg';
+import EditIcon from '../../../assets/svg/badge.svg';
+import DeleteIcon from '../../../assets/svg/badge.svg';
 
 const icons = {
   arrowUp,
+  EditIcon,
+  DeleteIcon
 };
 
 const IconSvg = ({ name, size = 24, className, fill, ...props }) => {

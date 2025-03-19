@@ -20,11 +20,23 @@ const Section_3 =styled.div`
 
     img {
         box-shadow: none;
+        width: 100%;
     }
 
     .textSection3 {
+        display: flex;
+        flex-direction: column;
         height: 400px;
         background-color: #353434ba;
+        align-items: center;
+        line-height: 80px;
+    }
+
+    .Button {
+        top: 80px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.5s;
     }
 
 @media screen and (min-width: 768px){
@@ -33,12 +45,12 @@ const Section_3 =styled.div`
 
     img {
         width: 30rem;
-        margin-left: -1rem;
+        /* margin-left: -1rem; */
     }
 
-    .textSection3 h1 {
+    /* .textSection3 h1 {
         margin-top: 3rem;
-    }
+    } */
 
 @media screen and (min-width: 1024px){
 
@@ -78,12 +90,12 @@ const HomeSection_3 = () => {
 
   return (
     <Section_3>
-        <Image img={<img src={img1} alt="Home section 1"/>} />
+        <Image img={img1} alt="Home section 1" />
         <Text className={'textSection3'}>
             <p>Selecciona tu favorito de los 5 del menù.</p>
             <h1>¡Ordenalo ya!</h1>
-        </Text>
         <Button className='Button' onClick={handleClick}>Aquí</Button>
+        </Text>
     </Section_3>
   )
 }

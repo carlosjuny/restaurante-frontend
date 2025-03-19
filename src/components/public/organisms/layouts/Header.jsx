@@ -47,11 +47,11 @@ const Textstyle = styled(Text)`
   font-size: 30px;
   text-align: center;
   top: 50%;
-  h1 {
+  /* h1 {
     margin-bottom: 60px;
     line-height: 60px;
     font-weight: 100;
-  }
+  } */
 `
 
 const Header = () => {

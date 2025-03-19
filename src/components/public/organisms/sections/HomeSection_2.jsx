@@ -56,7 +56,7 @@ const HomeSection_2 = () => {
           combinando sabores auténticos con una presentación sofisticada. Desde entradas irresistibles 
           hasta postres exquisitos, cada bocado está pensado para deleitar tu paladar y hacer de cada 
           visita una ocasión especial.</p></TextStyle>
-        <Image img={<img src={img1} alt="Home section 2"/>} />
+        <Image img={img1} alt="Home section 2" />
     </Section_2>
   )
 }

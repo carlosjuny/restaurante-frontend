@@ -25,26 +25,21 @@ const SelectStyle = styled.div`
   }
 
   .SelectItem img {
-    width: 77px;
-    margin-left: -120px;
-    border: 1px solid #c1c1c1;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    position: absolute;
+    width: 100%;
+    border-radius: 5px;
   }
 
   .BtnSelect1, .BtnSelect2, .BtnSelect3, .BtnSelect4 {
-    width: 200px;
+    position: relative;
+    width: 80px;
     height: 80px;
     border-radius: 5px;
     border: 1px solid #5f5f5f92;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     box-shadow: 0px 4px 15px rgba(34, 32, 32, 0.726);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    margin-bottom: 10px;
-    
+    margin-bottom: 10px;    
   }
 
   .BtnSelect1:hover, .BtnSelect2:hover, .BtnSelect3:hover, .BtnSelect4:hover {
@@ -62,7 +57,7 @@ const SelectStyle = styled.div`
 
   @media (min-width: 570px) {
     .Select {
-      gap: 40px;
+      gap: 10px;
     }
   }
 
@@ -70,7 +65,8 @@ const SelectStyle = styled.div`
     .Select {
       display: flex;
       flex-direction: row;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 40px;
+      /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
     }
   }
 `;

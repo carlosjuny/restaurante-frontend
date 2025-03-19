@@ -1,30 +1,39 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const ImageStyle = styled.div`
     display: flex;
-    /* width: 50%;
-    height: 50%; */
-
-img {
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    box-shadow: 15px 15px 5px 2px #353434;
-} 
 
-@media screen and  (min-width: 768px) { 
-    width: 40%;
-}
+    img {
+        width: 100%;
+    }
 
-@media (min-width: 1024px) {
-    width: 30%;
-}
-`
+    @media (min-width: 768px) { 
+        width: 40%;
+    }
 
-const Image = ({ img }) => {
-  return (
-    <ImageStyle >
-        {img}
-    </ImageStyle>
-  )
-}
+    @media (min-width: 1024px) {
+        width: 35%;
+    }
+`;
 
-export default Image
+const Image = ({ img, alt = "Imagen", className, children }) => {
+    return (
+        <ImageStyle className={className}>
+            {children}
+            <img src={img} alt={alt} />
+        </ImageStyle>
+    );
+};
+
+Image.propTypes = {
+    img: PropTypes.string.isRequired,
+    alt: PropTypes.string,
+    children: PropTypes.node,
+    className: PropTypes.string,
+};
+
+export default Image;

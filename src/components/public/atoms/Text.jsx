@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import PropsTypes from 'prop-types'
 
 const TextStyle = styled.div`
+    position: relative;
     width: 70%;
     line-height: 45px;
     padding: 2rem 2rem;

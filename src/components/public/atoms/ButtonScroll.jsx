@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import IconSvg from '../atoms/IconSvg';
 
-
 const waveAnimation = keyframes`
   0% {
     box-shadow: 0 0 0 0 rgba(51, 51, 51, 0.692);
@@ -18,7 +17,7 @@ const BackTop = styled.div`
   height: 45px;
   bottom: 20px;
   right: 20px;
-  display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
+  display: ${({ $isVisible }) => ($isVisible ? 'block' : 'none')};
   background-color: #32312C;
   color: #fff;
   border-radius: 50%;
@@ -67,11 +66,7 @@ const ButtonScroll = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
+    setIsVisible(window.pageYOffset > 300);
   };
 
   const scrollToTop = () => {
@@ -89,7 +84,7 @@ const ButtonScroll = () => {
   }, []);
 
   return (
-    <BackTop isVisible={isVisible} onClick={scrollToTop}>
+    <BackTop $isVisible={isVisible} onClick={scrollToTop}>
       <IconSvg name='arrowUp' className='Top' size={35} />
     </BackTop>
   );

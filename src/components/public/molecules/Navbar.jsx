@@ -4,9 +4,9 @@ import Logo from '../../../assets/images/icons/logo_ladicha.png'
 // import { MdDeliveryDining } from "react-icons/md"
 import { FaUser } from "react-icons/fa"
 import Button from '../atoms/Button'
-import Modal from '../../../components/public/molecules/Modal';
-// import LoginRegisterForm from '../atoms/LoginRegister';
 import { Link } from 'react-router-dom'
+import ModalForm from '../../public/organisms/modals/LoginModal'
+import RegisterModal from '../../public/organisms/modals/RegisterModal'
 // import CartModal from '../atoms/CartModal'
 
 const Nav = styled.nav`
@@ -181,7 +181,8 @@ const Tooltip = styled.div`
 const Navbar = () => {
     const [active, setActive] = useState("menu");
     const [toggleIcon, setToggleIcon] = useState('nav-toggle');
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
 
     const navToggle = () => {
@@ -194,29 +195,24 @@ const Navbar = () => {
             : setToggleIcon('nav-toggle');
     };
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const openLoginModal = () => {
+        closeRegisterModal(); setIsLoginModalOpen(true);
+    };
+    const openRegisterModal = () => {
+        closeLoginModal(); setIsRegisterModalOpen(true);
+    };
+    const closeLoginModal = () => setIsLoginModalOpen(false);
 
-    // const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-
-    // const handleOpenCart = () => {
-    //     setIsCartModalOpen(true);
-    // };
-
-    // const handleCloseCart = () => {
-    //     setIsCartModalOpen(false);
-    // };
+    const closeRegisterModal = () => setIsRegisterModalOpen(false);
 
     return (
         <Nav>
-            {/* <ShoppingIcon className="shopping" onClick={handleOpenCart} /> */}
-            {/* <CartModal isOpen={isCartModalOpen} handleCloseCart={handleCloseCart} /> */}
-            <Link to='/' className='navLink'>{''}<img src={Logo} alt="Logo" /></Link>
+            <Link to='/' className='navLink'><img src={Logo} alt="Logo" /></Link>
             <ul className={active}>
-                <li className='navItem'><Link to='/sobrenosotros' className='navLink'>Sobre nosotros</Link>{''}</li>
-                <li className='navItem'><Link to='/menu' className='navLink'>Menù</Link>{''}</li>
-                <li className='navItem'><Link to='/promociones' className='navLink'>Promociones</Link>{''}</li>
-                <li className='navItem'><Link to='/contacto' className='navLink'>Contacto</Link>{''}</li>
+                <li className='navItem'><Link to='/sobrenosotros' className='navLink'>Sobre nosotros</Link></li>
+                <li className='navItem'><Link to='/menu' className='navLink'>Menù</Link></li>
+                <li className='navItem'><Link to='/promociones' className='navLink'>Promociones</Link></li>
+                <li className='navItem'><Link to='/contacto' className='navLink'>Contacto</Link></li>
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className='line1'></div>
@@ -227,17 +223,20 @@ const Navbar = () => {
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}
             >
-                <Button onClick={openModal}>
+                <Button onClick={openLoginModal}>
                     <FaUser /><p>Ingresar</p>
                 </Button>
                 <Tooltip $showTooltip={showTooltip}>
                     Inicia sesión para disfrutar nuestros descuentos
                 </Tooltip>
             </ButtonContainer>
-            {isModalOpen && (
-                <Modal onClose={closeModal}>
-                    {/* <LoginRegisterForm /> */}
-                </Modal>
+
+            {isLoginModalOpen && (
+                <ModalForm onClose={closeLoginModal} openRegisterModal={openRegisterModal} />
+            )}
+
+            {isRegisterModalOpen && (
+                <RegisterModal onClose={closeRegisterModal} openLoginModal={openLoginModal} />
             )}
         </Nav>
     );

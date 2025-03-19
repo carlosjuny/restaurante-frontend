@@ -55,7 +55,7 @@ const TextStyle = styled(Text)`
 const HomeSection_1 = () => {
   return (
     <Section_1>
-        <Image img={<img src={img1} alt="Home section 1"/>} />
+        <Image img={img1} alt="Home section 1" />
         <TextStyle><h1>Nuestra Especialización Gourmet</h1><p>En La Dicha, nos enorgullece ofrecer una selecciòn cuidadosamente elaborada de platillos 
             que reflejan la frescura de los ingredientes locales y la pasión de nuestro talentoso equipo 
             de chefs. Desde nuestras entradas irresistibles hasta nuestros postres tentadores, cada 

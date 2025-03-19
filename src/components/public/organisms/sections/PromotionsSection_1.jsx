@@ -9,9 +9,12 @@ import img6 from '../../../../assets/images/public/promotions_6.png'
 import promoVideo from '../../../../assets/video/RestaurantVideo.mp4'
 
 const PromotionStyle = styled.div`
+    position: relative;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 80px;
+    justify-items: center;
+    padding: 30px;
 
     img {
         width: 350px;
@@ -20,8 +23,7 @@ const PromotionStyle = styled.div`
     }
 
 @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 12%;
+    grid-template-columns: repeat(2, 2fr);
     margin-bottom: 100px;
 
     img {
@@ -32,6 +34,10 @@ const PromotionStyle = styled.div`
             transition: .3s ease;
             cursor: pointer;
         }
+    }
+
+@media (min-width: 1440px) {
+        grid-template-columns: repeat(3, 2fr);
     }
 }
 `
@@ -53,12 +59,12 @@ const PromotionsSection_1 = () => {
   return (
     <>
             <PromotionStyle>
-                <Image img={<img src={img1} alt="Promotion 1" />} />
-                <Image img={<img src={img2} alt="Promotion 2" />} />
-                <Image img={<img src={img3} alt="Promotion 3" />} />
-                <Image img={<img src={img4} alt="Promotion 4" />} />
-                <Image img={<img src={img5} alt="Promotion 5" />} />
-                <Image img={<img src={img6} alt="Promotion 6" />} />
+                <Image img={img1} alt="Promotion 1" />
+                <Image img={img2} alt="Promotion 2" />
+                <Image img={img3} alt="Promotion 3" />
+                <Image img={img4} alt="Promotion 4" />
+                <Image img={img5} alt="Promotion 5" />
+                <Image img={img6} alt="Promotion 6" />
             </PromotionStyle>
             <VideoContainer>
                 <video controls>

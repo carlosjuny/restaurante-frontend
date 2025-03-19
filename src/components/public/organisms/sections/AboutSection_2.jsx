@@ -42,7 +42,7 @@ const AboutSection_2 = () => {
             ofrecemos un menú preparado a la medida de cada comensal, en 
             un ambiente cálido y acogedor. ¡Ven y vive una experiencia gastronómica
             que te hará volver!</p></Text>
-        <Image img={<img src={img2} alt="About section 2"/>}/>
+        <Image img={img2} alt="About section 2" />
     </SectionStyle>
   )
 }

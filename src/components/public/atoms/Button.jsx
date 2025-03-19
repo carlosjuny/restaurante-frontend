@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ButtonStyle = styled.button`
     width: 6.5rem;
@@ -39,9 +40,9 @@ const ButtonStyle = styled.button`
 `;
 
 const Button = ({ children, onClick, className }) => (
-  <ButtonStyle onClick={onClick} className={className}>
+  <Link to='/'><ButtonStyle onClick={onClick} className={className}>
     {children}
-  </ButtonStyle>
+  </ButtonStyle></Link>
 );
 
 Button.propTypes = {

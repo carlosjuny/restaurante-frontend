@@ -16,7 +16,7 @@ const SectionStyle = styled.div`
    padding-bottom: 50px;
 
    img {
-    box-shadow: 4px 4px 4px 1px rgba(56, 56, 56, 0.25), 4px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 4px 1px rgba(56, 56, 56, 0.25);
     animation: float 3s ease-in-out infinite;
    }
 
@@ -76,7 +76,7 @@ const SectionStyle = styled.div`
 const AboutSection_1 = () => {
   return (
     <SectionStyle>
-        <Image img={<img src={img1} alt="About section 1"/>}/>
+        <Image img={img1} alt="About section 1"/>
         <Text className={'aboutText'}><p>En La Dicha, llevamos más de siete años dedicados a brindar 
             una experiencia gastronómica única a nuestros clientes. Somos
             un restaurante comprometido con la calidad, donde cada plato

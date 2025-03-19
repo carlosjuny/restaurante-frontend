@@ -43,9 +43,10 @@ const IconContainer = styled.div`
   }
 `
 
-const InputSearch = ({ onChange }) => {
+const InputSearch = ({ onChange, className }) => {
   return (
-    <InputContainer>
+    <InputContainer
+    className={className}>
       <InputStyle 
       type="text"
       placeholder='Buscar'
@@ -60,7 +61,8 @@ const InputSearch = ({ onChange }) => {
 }
 
 InputSearch.propTypes = {
-  onChange: PropsTypes.func.isRequired
+  onChange: PropsTypes.func.isRequired,
+  className: PropsTypes.string
 }
 
 export default InputSearch

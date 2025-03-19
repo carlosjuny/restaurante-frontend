@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Receta from '../../../assets/images/public/saucer-one.png';
 import Button from '../atoms/Button'
+import Image from '../../public/atoms/Image'
 
 const CardContainer = styled.div`
   display: grid;
@@ -28,14 +29,17 @@ const CardContainer = styled.div`
 
 const CardStyle = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: #1f1e1e;
   box-shadow: 0px 4px 4px rgba(56, 56, 56, 0.25),  1px 0px 3px 2px rgba(0, 0, 0, 0.25);
   overflow: hidden;  
   border-radius: 5px;
   padding-bottom: 20px;
+  align-items: center;
 
   img {
-    width: 100%;
+    width: 300px;
   }
 
   .price {
@@ -88,9 +92,9 @@ const CardStyle = styled.div`
 const CardProduct = () => {
   return (
     <CardContainer>
-      {[...Array(8)].map((_, i) => (
+      {[...Array(9)].map((_, i) => (
         <CardStyle key={i}>
-          <img src={Receta} alt="Receta" />
+          <Image img={Receta} alt="Receta" />
           <div className='price'>
             <p>COP 20000.00</p>
             <p>Carne, papas y ensalada</p>

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
-import CRUD from "../atoms/CRUD";
+import ButtonCrud from "../../admin/atoms/ButtonCrud";
 import DataTable from "react-data-table-component";
-import Input from "../../web/atoms/Input";
-
+import InputSearch from "../../public/atoms/InputSearch";
+import IconSvg from "../../public/atoms/IconSvg";
 
 const List = styled.div`
   display: flex;
   padding: 50px;
-  width: 100%;
+  width: 90%;
   height: 85vh;
   background-color: #ffffffcf;
   border-radius: 5px;
@@ -20,6 +20,15 @@ const List = styled.div`
     display: grid;
     grid-template-columns: 2fr 2fr;
     gap: 40px;
+  }
+
+  .input {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+
+  .ipNKSC {
+    background-color: #c1c1c1;
   }
 
   @media (min-width: 768px) {
@@ -34,14 +43,12 @@ const List = styled.div`
   }
 
   @media (min-width: 1024px) {
-    /* width: 100%; */
   }
 `;
 
 const handleClick = () => {
-    alert("Acción del botón ejecutada");
-  };
-
+  alert("Acción del botón ejecutada");
+};
 
 const columns = [
   {
@@ -63,8 +70,19 @@ const columns = [
     name: 'Teléfono',
     selector: row => row.phone,
     sortable: true
-  }
-]
+  },
+  {
+    name: 'Acciones',
+    selector: 'acciones',
+    cell: (row) => (
+      <div style={{ display: 'flex', gap: '10px', cursor: 'pointer' }}>
+        <IconSvg name="EditIcon" size={35} onClick={() => handleClick()} />
+        <IconSvg name="EditIcon" size={35} onClick={() => handleClick()} />
+        <IconSvg name="DeleteIcon" size={35} onClick={() => handleClick()} />
+      </div>
+    ),
+  },
+];
 
 const data = [
   {
@@ -115,51 +133,42 @@ const data = [
     email: 'pedro.gonzalez@correo.com',
     phone: '9876543210'
   },
-]
+];
 
 const ListCrud = () => {
 
-  const [records, setRecords] = useState(data)
-  
+  const [records, setRecords] = useState(data);
+
   const handleChange = (e) => {
     const filteredRecords = data.filter(record => {
-    return record.name.toLowerCase().includes(e.target.value.toLowerCase())
-  })
+      return record.name.toLowerCase().includes(e.target.value.toLowerCase());
+    });
 
-  setRecords(filteredRecords)
-  
-  }
+    setRecords(filteredRecords);
+  };
 
   return (
-    <List >
-
+    <List>
       <div className="Buttom">
-        <CRUD label="Consultar" onClick={handleClick} />
-        <CRUD label="Crear" onClick={handleClick} />
-        <CRUD label="Actualizar" onClick={handleClick} />
-        <CRUD label="Eliminar" onClick={handleClick} />
-      <Input type='text'
-        onChange={handleChange}
-      />
+        {/* <ButtonCrud label="Consultar" onClick={handleClick} /> */}
+        <ButtonCrud label="Agregar" onClick={handleClick} />
+        {/* <ButtonCrud label="Actualizar" onClick={handleClick} />
+        <ButtonCrud label="Eliminar" onClick={handleClick} /> */}
+        <InputSearch
+          type="text"
+          onChange={handleChange}
+          className="input"
+        />
       </div>
-      {/* <div>
-      <Table>
-      <h1>Tabla de Usuarios</h1>
-      </Table>
-    </div> */}
-    <DataTable
-      columns={columns}
-      data={records}
-      selectableRows
-      onSelectedRowsChange={data => console.log(data)}
-      pagination
-      // paginationPerPage={5}
-      paginationTotalRows={5}
-      fixedHeader
-      >
-
-    </DataTable>
-
+      <DataTable
+        columns={columns}
+        data={records}
+        selectableRows
+        onSelectedRowsChange={data => console.log(data)}
+        pagination
+        paginationTotalRows={5}
+        fixedHeader
+      />
     </List>
   );
 };

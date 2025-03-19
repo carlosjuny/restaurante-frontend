@@ -16,14 +16,13 @@ const MenuStyle = styled.div`
   left: ${(props) => (props.isOpen ? '0' : '0%')};
   width: ${(props) => (props.isOpen ? '350px' : '60px')};
   height: 100vh;
-  background-color: #4b4b4bdd;
+  background-color: #2c2c2cf2;
   z-index: 1;
   transition: left 0.3s ease, width 0.3s ease;
   overflow: hidden;
   overflow-y: auto;
 
   @media (min-width: 1024px) {
-    /* width: ${(props) => (props.isOpen ? '18%' : '4%')}; */
   }
 
   ul {

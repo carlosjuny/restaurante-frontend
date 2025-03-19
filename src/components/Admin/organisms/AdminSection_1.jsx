@@ -1,14 +1,8 @@
 import styled from 'styled-components'
-import img1 from '../../../assets/images/admin/admin_section_2.jpg'
-// import ListBackground from '../atoms/ListBackground'
-
+import ListCrurd from '../../admin/molecules/ListCrud'
 
 const SectionStyle = styled.div`
     position: fixed;
-    background-image: url(${img1});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;  
     width: 100%;
     height: 100vh;
     object-fit: cover;
@@ -19,7 +13,7 @@ const SectionStyle = styled.div`
 const AdminSection_1 = () => {
   return (
     <SectionStyle>
-      {/* <ListBackground /> */}
+      <ListCrurd />
     </SectionStyle>
   )
 }
