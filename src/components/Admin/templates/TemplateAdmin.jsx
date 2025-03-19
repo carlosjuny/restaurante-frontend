@@ -1,20 +1,24 @@
-import BarTop from '../../admin/atoms/BarTopAdmin'
-import AdminSection_1 from '../../admin/organisms/AdminSection_1'
-import MenuAdmin from '../../admin/molecules/NavbarAdmin'
-import PropsTypes from 'prop-types'
+import NavbarAdmin from '../../admin/molecules/NavbarAdmin';
+import PropTypes from 'prop-types';
+import BarTopAdmin from '../../admin/atoms/BarTopAdmin';
+import { Outlet } from 'react-router-dom';
+import Crud from '../molecules/Crud';
 
-const TemplateAdmin = ({children}) => {
+const TemplateAdmin = () => {
   return (
     <>
-    <BarTop />
-    <MenuAdmin />
-    <AdminSection_1 />
+      <BarTopAdmin />
+      <NavbarAdmin />
+      <main>
+        <Crud />
+        <Outlet />
+      </main>
     </>
-  )
-}
+  );
+};
 
-TemplateAdmin.propsTypes = {
-  children: PropsTypes.node
-}
+TemplateAdmin.propTypes = {
+  children: PropTypes.node,
+};
 
-export default TemplateAdmin
+export default TemplateAdmin;

@@ -4,7 +4,7 @@ import AboutPage from '../pages/public/AboutPage';
 import ContactPage from '../pages/public/ContactPage';
 import PromotionPage from '../pages/public/PromotionPage';
 import AdminPage from '../pages/admin/AdminPage';
-import MesasAdmin from '../pages/admin/MesasAdmin';
+import MesasTables from '../pages/admin/modules/Mesas/MesasTables';
 
 
 const PublicRoutes = [
@@ -14,7 +14,7 @@ const PublicRoutes = [
     { path: "promociones", element: <PromotionPage /> },
     { path: "contacto", element: <ContactPage /> },
     { path: "admin", element: <AdminPage /> },
-    { path: "mesas", element: <MesasAdmin /> }
+    { path: "/admin/mesas", element: <MesasTables /> },
 ]
 
 export default PublicRoutes
