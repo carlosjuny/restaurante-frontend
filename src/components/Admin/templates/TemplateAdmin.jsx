@@ -1,15 +1,19 @@
-import BarTop from '../../admin/atoms/BarTopAdmin'
-import AdminSection_1 from '../../admin/organisms/AdminSection_1'
-import NavbarAdmin from '../../admin/organisms/layouts/NavbarAdmin'
+import NavbarAdmin from '../../admin/organisms/layouts/NavbarAdmin';
+import BarTopAdmin from '../../admin/atoms/BarTopAdmin';
+import { Outlet } from 'react-router-dom';
+import Crud from '../molecules/Crud';
 
 const TemplateAdmin = () => {
   return (
     <>
-    <BarTop />
-    <NavbarAdmin />
-    <AdminSection_1 />
+      <BarTopAdmin />
+      <NavbarAdmin />
+      <main>
+        <Crud />
+        <Outlet />
+      </main>
     </>
-  )
-}
+  );
+};
 
 export default TemplateAdmin

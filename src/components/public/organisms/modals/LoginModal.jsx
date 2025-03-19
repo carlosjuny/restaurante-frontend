@@ -7,6 +7,7 @@ import InputForm from '../../atoms/InputForm'
 import Image from '../../atoms/Image'
 import loginModalImg from '../../../../assets/images/public/login_modal.jpg';
 import LinkNavigate from '../../atoms/LinkNavigate';
+import { Link } from 'react-router-dom';
 
 const ModalFormStyle = styled.form`
   display: flex;
@@ -62,7 +63,7 @@ const LoginModal = ({ onSubmit, children, onClose, openRegisterModal  }) => {
       <InputForm placeholder='Contraseña' type='password'/>
       {children}
       <div className='navigate'>
-        <ButtonStyle type="submit">Acceder</ButtonStyle>
+      <ButtonStyle type="submit"><Link to='admin'>Acceder</Link></ButtonStyle>
         <span>¿No tienes cuenta? <LinkNavigate to='RegisterModal' onClick={openRegisterModal}>Registrate</LinkNavigate></span>
       </div>
     </ModalFormStyle>
