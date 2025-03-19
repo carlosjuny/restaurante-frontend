@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropsTypes from 'prop-types';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -46,5 +47,10 @@ const AlertModal = ({ message, onClose }) => {
     </ModalOverlay>
   );
 };
+
+AlertModal.propTypes = {
+  message: PropsTypes.string.isRequired,
+  onClose: PropsTypes.func.isRequired,
+}
 
 export default AlertModal;

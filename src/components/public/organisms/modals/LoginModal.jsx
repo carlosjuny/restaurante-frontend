@@ -12,7 +12,6 @@ const ModalFormStyle = styled.form`
   display: flex;
   position: relative;
   flex-direction: column;
-  /* margin: auto; */
   justify-content: center;
   align-items: center;
   width: 400px;
@@ -21,7 +20,6 @@ const ModalFormStyle = styled.form`
   input {
     position: relative;
     width: 380px;
-    /* left: 10px; */
     margin-bottom: 10px;
     color: #32312C;
   }
@@ -37,7 +35,6 @@ const ModalFormStyle = styled.form`
 
   .navigate {
     position: relative;
-    /* justify-content: space-around; */
     display: flex;
     margin: auto;
     align-items: center;
@@ -62,7 +59,7 @@ const LoginModal = ({ onSubmit, children, onClose, openRegisterModal  }) => {
       <Image img={loginModalImg} alt="Login Modal" className='ModalImg'/>
       <ModalClose onClick={onClose} />
       <InputForm placeholder='Correo'/>
-      <InputForm placeholder='Contraseña'/>
+      <InputForm placeholder='Contraseña' type='password'/>
       {children}
       <div className='navigate'>
         <ButtonStyle type="submit">Acceder</ButtonStyle>

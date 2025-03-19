@@ -11,12 +11,14 @@ const InputStyle = styled.input`
   color: #ffffff;
 `;
 
-const InputForm = ({ placeholder }) => {
-  return <InputStyle type="text" placeholder={placeholder} />;
+const InputForm = ({ placeholder, type = "text" }) => {
+  return <InputStyle type={type} placeholder={placeholder} />;
 };
 
 InputForm.propTypes = {
-  placeholder: PropsTypes.string.isRequired
-}
+  placeholder: PropsTypes.string.isRequired,
+  type: PropsTypes.string
+};
 
 export default InputForm;
+

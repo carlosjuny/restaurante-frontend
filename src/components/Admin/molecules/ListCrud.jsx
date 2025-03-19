@@ -73,12 +73,11 @@ const columns = [
   },
   {
     name: 'Acciones',
-    selector: 'acciones',
-    cell: (row) => (
+    cell: () => (
       <div style={{ display: 'flex', gap: '10px', cursor: 'pointer' }}>
-        <IconSvg name="EditIcon" size={35} onClick={() => handleClick()} />
-        <IconSvg name="EditIcon" size={35} onClick={() => handleClick()} />
-        <IconSvg name="DeleteIcon" size={35} onClick={() => handleClick()} />
+        <IconSvg name="EditIcon" size={35} onClick={() => handleClick('Editar')} />
+        <IconSvg name="EditIcon" size={35} onClick={() => handleClick('Actualizar')} />
+        <IconSvg name="DeleteIcon" size={35} onClick={() => handleClick('Eliminar')} />
       </div>
     ),
   },
@@ -150,10 +149,7 @@ const ListCrud = () => {
   return (
     <List>
       <div className="Buttom">
-        {/* <ButtonCrud label="Consultar" onClick={handleClick} /> */}
         <ButtonCrud label="Agregar" onClick={handleClick} />
-        {/* <ButtonCrud label="Actualizar" onClick={handleClick} />
-        <ButtonCrud label="Eliminar" onClick={handleClick} /> */}
         <InputSearch
           type="text"
           onChange={handleChange}

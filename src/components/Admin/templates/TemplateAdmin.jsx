@@ -1,20 +1,15 @@
 import BarTop from '../../admin/atoms/BarTopAdmin'
 import AdminSection_1 from '../../admin/organisms/AdminSection_1'
-import MenuAdmin from '../../admin/molecules/NavbarAdmin'
-import PropsTypes from 'prop-types'
+import NavbarAdmin from '../../admin/organisms/layouts/NavbarAdmin'
 
-const TemplateAdmin = ({children}) => {
+const TemplateAdmin = () => {
   return (
     <>
     <BarTop />
-    <MenuAdmin />
+    <NavbarAdmin />
     <AdminSection_1 />
     </>
   )
-}
-
-TemplateAdmin.propsTypes = {
-  children: PropsTypes.node
 }
 
 export default TemplateAdmin

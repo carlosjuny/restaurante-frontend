@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import Logo from '../../../assets/images/icons/logo_ladicha.png'
+import Logo from '../../../../assets/images/icons/logo_ladicha.png'
 // import { MdDeliveryDining } from "react-icons/md"
 import { FaUser } from "react-icons/fa"
-import Button from '../atoms/Button'
+import Button from '../../atoms/Button'
 import { Link } from 'react-router-dom'
-import ModalForm from '../../public/organisms/modals/LoginModal'
-import RegisterModal from '../../public/organisms/modals/RegisterModal'
+import ModalForm from '../modals/LoginModal'
+import RegisterModal from '../modals/RegisterModal'
 // import CartModal from '../atoms/CartModal'
 
 const Nav = styled.nav`
