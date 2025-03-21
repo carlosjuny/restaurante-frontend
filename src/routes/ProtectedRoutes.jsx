@@ -5,7 +5,7 @@ const ProtectedRoutes = ({ children, requiredRole }) => {
     const authUser = JSON.parse(localStorage.getItem("authUser"));
 
     if (!authUser) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/" />;
     }
 
     if (requiredRole && authUser.role !== requiredRole) {
