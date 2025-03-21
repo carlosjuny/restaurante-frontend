@@ -1,13 +1,19 @@
-import { Navigate } from "react-router-dom";
-import PropsTypes from 'prop-types'
+import { Navigate, Outlet } from "react-router-dom";
+import PropTypes from "prop-types";
+import storage from "../Storage/Storage";
 
 const ProtectedRoutes = ({ children }) => {
-    const isAutenticated = localStorage.getItem('token');
-    return isAutenticated ? children : <Navigate to="/login" />;
-}
+    const authUser = storage.get("authUser");
+
+    if (!authUser) {
+        return <Navigate to="/login" />;
+    }
+
+    return children ? children : <Outlet />;
+};
 
 ProtectedRoutes.propTypes = {
-    children: PropsTypes.element.isRequired
-}
+    children: PropTypes.node,
+};
 
 export default ProtectedRoutes;

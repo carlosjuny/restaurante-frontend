@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropsTypes from 'prop-types'
 
 const CrudStyle = styled.div`
   .modal-overlay {
@@ -58,5 +59,12 @@ const ModalCrud = ({ isOpen, onClose, title, children }) => {
     </CrudStyle>
   );
 };
+
+ModalCrud.propTypes = {
+  isOpen: PropsTypes.bool.isRequired,
+  onClose: PropsTypes.func,
+  title: PropsTypes.string,
+  children: PropsTypes.node.isRequired,
+}
 
 export default ModalCrud;

@@ -18,6 +18,7 @@ const MenuStyle = styled.div.withConfig({
   z-index: 1;
   transition: left 0.3s ease, width 0.3s ease;
   overflow: hidden;
+  z-index: 2;
 
   ul {
     display: flex;
@@ -120,7 +121,7 @@ const CustomLinkNavigate = styled(LinkNavigate)`
   width: 170px;
   left: 55px;
   text-align: start;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 `;
 
 const DashboardLinkNavigate = styled(LinkNavigate)`
@@ -192,7 +193,7 @@ const NavbarAdmin = () => {
             <ul className={openSubmenus[1] ? "open" : "" }>
               <li><CustomLinkNavigate to="">Clientes</CustomLinkNavigate></li>
               <li><CustomLinkNavigate to="">Pedidos</CustomLinkNavigate></li>
-              <li><CustomLinkNavigate to="">Gestión de mesas</CustomLinkNavigate></li>
+              <li><CustomLinkNavigate to="/admin/mesas">Gestión de mesas</CustomLinkNavigate></li>
             </ul>
           </li>
 

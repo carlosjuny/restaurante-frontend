@@ -11,13 +11,15 @@ const InputStyle = styled.input`
   color: #ffffff;
 `;
 
-const InputForm = ({ placeholder, type = "text" }) => {
-  return <InputStyle type={type} placeholder={placeholder} />;
+const InputForm = ({ value, placeholder, type = "text", onChange }) => {
+  return <InputStyle type={type} placeholder={placeholder} value={value} onChange={onChange} />;
 };
 
 InputForm.propTypes = {
   placeholder: PropsTypes.string.isRequired,
-  type: PropsTypes.string
+  type: PropsTypes.string,
+  value: PropsTypes.string,
+  onChange: PropsTypes.func.isRequired,
 };
 
 export default InputForm;

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import useCrud from "../../../../hooks/useCrud";
-import Crud from "../../../../components/admin/molecules/Crud";
-import ModalCrud from "../../../../components/admin/molecules/ModalCrud";
-import TemplateAdmin from "../../../../components/admin/templates/TemplateAdmin";
+import useCrud from "../../hooks/useCrud";
+import Crud from "../../components/admin/molecules/Crud";
+import ModalCrud from "../../components/admin/molecules/ModalCrud";
+import TemplateAdmin from "../../components/admin/templates/TemplateAdmin";
 
-const Mesas = () => {
+const ClientTable = () => {
   const { data, loading, error } = useCrud("/mesas");
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -42,7 +42,7 @@ const Mesas = () => {
   return (
     <TemplateAdmin>
       <div style={{ marginBottom: "20px" }}>
-        {/* <button onClick={() => setModalOpen(true)}>➕ Agregar Mesa</button> */}
+        <button onClick={() => setModalOpen(true)}>➕ Agregar Mesa</button>
       </div>
       <Crud columns={columns} data={data} loading={loading} error={error} />
       {modalOpen && (
@@ -64,4 +64,4 @@ const Mesas = () => {
   );
 };
 
-export default Mesas;
+export default ClientTable;

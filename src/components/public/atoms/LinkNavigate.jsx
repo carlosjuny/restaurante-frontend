@@ -13,16 +13,17 @@ const LinkStyle = styled(Link)`
   }
 `;
 
-const LinkNavigate = ({ children, onClick, className }) => {
+const LinkNavigate = ({ to, children, onClick, className }) => {
   return (
-    <LinkStyle onClick={onClick} className={className}>
+    <LinkStyle to={to} onClick={onClick} className={className}>
       {children}
     </LinkStyle>
   );
 };
 
 LinkNavigate.propTypes = {
-  children: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string
 };

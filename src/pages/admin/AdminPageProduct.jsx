@@ -1,11 +1,12 @@
-import TemplateAdmin from '../../components/admin/templates/TemplateAdmin'
+import AdminSectionAdd from '../../components/admin/organisms/AdminSectionAdd'
+import TemplateProducts from '../../components/admin/templates/TemplateProducts'
 
-const AdminPage = () => {
+const AdminPageProduct = () => {
   return (
-    <TemplateAdmin>
-        
-    </TemplateAdmin>
+    <TemplateProducts>
+        <AdminSectionAdd />
+    </TemplateProducts>
   )
 }
 
-export default AdminPage
+export default AdminPageProduct

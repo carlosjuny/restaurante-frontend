@@ -10,6 +10,10 @@ import Filter from '../../../assets/svg/filter.svg';
 import Settings from '../../../assets/svg/settings.svg';
 import Store from '../../../assets/svg/store.svg';
 import User from '../../../assets/svg/user.svg';
+import Edit from '../../../assets/svg/edit.svg';
+import Warning from '../../../assets/svg/warning.svg';
+import Delette from '../../../assets/svg/delette.svg';
+import Back from '../../../assets/svg/back.svg';
 
 const icons = {
   arrowUp,
@@ -21,7 +25,11 @@ const icons = {
   Filter,
   Settings,
   Store,
-  User
+  User,
+  Edit,
+  Warning,
+  Delette,
+  Back
 };
 
 const IconSvg = ({ name, size = 24, className, fill, ...props }) => {

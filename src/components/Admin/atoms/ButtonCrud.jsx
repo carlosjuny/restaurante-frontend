@@ -25,7 +25,7 @@ const ButtonCrud = ({ label, onClick }) => {
 
 ButtonCrud.propTypes = {
   label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
   
 
