@@ -14,6 +14,7 @@ import Edit from '../../../assets/svg/edit.svg';
 import Warning from '../../../assets/svg/warning.svg';
 import Delette from '../../../assets/svg/delette.svg';
 import Back from '../../../assets/svg/back.svg';
+import Exitt from '../../../assets/svg/exitt.svg';
 
 const icons = {
   arrowUp,
@@ -29,7 +30,8 @@ const icons = {
   Edit,
   Warning,
   Delette,
-  Back
+  Back,
+  Exitt
 };
 
 const IconSvg = ({ name, size = 24, className, fill, ...props }) => {

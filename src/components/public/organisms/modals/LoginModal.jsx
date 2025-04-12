@@ -22,8 +22,9 @@ const ModalFormStyle = styled.form`
   input {
     position: relative;
     width: 380px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #32312c;
+    border-radius: 8px;
   }
 
   img {
@@ -102,7 +103,7 @@ const LoginModal = ({ onClose, openRegisterModal }) => {
           </ButtonStyle>
           <span>
             ¿No tienes cuenta?{" "}
-            <LinkNavigate to="RegisterModal" onClick={openRegisterModal}>
+            <LinkNavigate href="RegisterModal" onClick={openRegisterModal}>
               Regístrate
             </LinkNavigate>
           </span>

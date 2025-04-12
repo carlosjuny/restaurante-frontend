@@ -32,4 +32,23 @@ export const login = async (credentials) => {
     });
 };
 
+// api.js
+export const register = async (credentials) => {
+  await getCsrfToken(); // Asegura que Sanctum tiene la cookie CSRF
+
+  return api.post('/register', credentials)
+    .then(response => {
+      console.log('Registro exitoso:', response.data);
+
+      localStorage.setItem("authUser", JSON.stringify(response.data.user));
+
+      return response.data;
+    })
+    .catch(error => {
+      console.error('Error en register:', error.response?.data || error.message);
+      throw error;
+    });
+};
+
+
 export default api;

@@ -70,6 +70,13 @@ const MenuStyle = styled.div.withConfig({
     justify-content: space-between;
     top: 55px;
   }
+  .logout {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 55px;
+  }
 
   h3 {
     flex-grow: 1;
@@ -129,6 +136,11 @@ const DashboardLinkNavigate = styled(LinkNavigate)`
   left: -16px;
   color: #FFFFFF;
 `
+const LogoutLinkNavigate = styled(LinkNavigate)`
+  position: relative;
+  left: 3px;
+  color: #FFFFFF;
+`
 
 const NavbarAdmin = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -178,7 +190,7 @@ const NavbarAdmin = () => {
             <ul className={openSubmenus[0] ? "open" : "" }>
               <li><CustomLinkNavigate to="">Perfil</CustomLinkNavigate></li>
               <li><CustomLinkNavigate to="">Configuración</CustomLinkNavigate></li>
-              <li><CustomLinkNavigate to="">Salir</CustomLinkNavigate></li>
+              {/* <li><CustomLinkNavigate to="">Salir</CustomLinkNavigate></li> */}
             </ul>
           </li>
 
@@ -245,6 +257,10 @@ const NavbarAdmin = () => {
           <li className='dashboard'>
               <IconSvg name='Settings' size="25"/>
               <DashboardLinkNavigate to="">Dashboard</DashboardLinkNavigate>
+          </li>
+          <li className='logout'>
+              <IconSvg name='Exitt' size="25"/>
+              <LogoutLinkNavigate to="">Cerrar sesión</LogoutLinkNavigate>
           </li>
         </ul>
       </MenuStyle>

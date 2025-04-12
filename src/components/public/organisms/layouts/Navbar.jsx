@@ -7,6 +7,7 @@ import Button from '../../atoms/Button'
 import { Link } from 'react-router-dom'
 import ModalForm from '../modals/LoginModal'
 import RegisterModal from '../modals/RegisterModal'
+// import IconSvg from '../../atoms/IconSvg'
 // import CartModal from '../atoms/CartModal'
 
 const Nav = styled.nav`
@@ -173,6 +174,16 @@ const Tooltip = styled.div`
     }
 `;
 
+// const IconSvgStyle = styled(IconSvg)`
+//     position: absolute;
+//     z-index: 4;
+//     top: -50px;
+//     left: 45px;
+//     padding: 5px;
+//     background-color: #e9d382a4;
+//     border-radius: 25px;
+// `
+
 // const ShoppingIcon = styled(MdDeliveryDining)`
 //   font-size: 2rem;
 //   cursor: pointer;
@@ -223,6 +234,7 @@ const Navbar = () => {
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}
             >
+                {/* <IconSvgStyle name='User' size='35' onClick={openLoginModal}/> */}
                 <Button onClick={openLoginModal}>
                     <FaUser /><p>Ingresar</p>
                 </Button>
